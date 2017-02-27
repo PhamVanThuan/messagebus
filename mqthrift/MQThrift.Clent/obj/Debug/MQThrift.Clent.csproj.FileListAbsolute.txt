@@ -1,0 +1,8 @@
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqthrift\MQThrift.Clent\bin\Debug\MQThrift.Clent.exe.config
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqthrift\MQThrift.Clent\bin\Debug\MQThrift.Clent.exe
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqthrift\MQThrift.Clent\bin\Debug\MQThrift.Clent.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqthrift\MQThrift.Clent\bin\Debug\Thrift.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqthrift\MQThrift.Clent\bin\Debug\Thrift.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqthrift\MQThrift.Clent\obj\Debug\MQThrift.Clent.csprojResolveAssemblyReference.cache
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqthrift\MQThrift.Clent\obj\Debug\MQThrift.Clent.exe
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqthrift\MQThrift.Clent\obj\Debug\MQThrift.Clent.pdb

@@ -1,0 +1,80 @@
+﻿@model List<YmatouMQNet4.Configuration.CallbackConfiguration>
+@using System.Collections;
+@{
+    var count = 1;
+}
+
+@for (var i = 0; i < Model.Count(); i++)
+{
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">@string.Format("回调配置{0}", count)</legend>
+        <div class="control-group">
+            <label for="CallbackKey" class="col-sm-2 control-label">回调业务端标识</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m[i].CallbackKey, new { @class = "form-control  list-group-item disabled",@readonly="readonly" , id = "CallbackKey", name = "CallbackKey" })
+                <p></p>
+            </div>
+            <label for="c_Enable" class="col-sm-2 control-label">是否启用</label>
+            <div class="col-sm-10">
+                @Html.EditorFor(m => m[i].Enable, new { htmlAttributes = new { id = "c_Enable", name = "c_Enable", @class = "form-control" } })
+                <p></p>
+            </div>
+            <label for="C_Url" class="col-sm-2 control-label">业务端URL</label>
+            <div class="col-sm-10">
+                @Html.EditorFor(m => m[i].Url, new { htmlAttributes = new { id = "C_Url", name = "C_Url", @class = "form-control" } })
+                <p></p>
+            </div>
+            <label for="C_TimeOut" class="col-sm-2 control-label">回调超时</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m[i].CallbackTimeOut, new { @class = "form-control", id = "C_TimeOut", name = "C_TimeOut" })
+                <p class="text-left help-block  text-error"><small>为空则取默认配置超时时间</small></p>
+            </div>
+            <label for="c_HttpType" class="col-sm-2 control-label">业务端接受的http类型</label>
+            <div class="col-sm-10">
+               @Html.DropDownListFor(m => m[i].HttpMethod, ((List<string>)ViewBag.httpType)
+               .Select(s =>
+               {
+                   string http = s.ToString();
+                   return new SelectListItem()
+                   {
+                       Selected = Model[i].HttpMethod != null ? (Model[i].HttpMethod == http) : false,
+                       Value = http,
+                       Text = http
+                   };
+               }),new{id="c_HttpType",name="c_HttpType",@class="form-control"})
+                <p></p>
+            </div>
+            <label for="c_ContentType" class="col-sm-2 control-label">业务端接受的媒体类型</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(m => m[i].ContentType, ((List<string>)ViewBag.ContextTypeArray)
+               .Select(s =>
+               {
+                   string context = s.ToString();
+                   return new SelectListItem()
+                   {
+                       Selected = Model[i].ContentType != null ? (Model[i].ContentType.ToString() == context) : false,
+                       Text = context,
+                       Value = context
+                   };
+               }), new { id = "c_ContentType", name = "c_ContentType", @class = "form-control" })
+                <p></p>
+            </div>
+            <label for="c_ContentType" class="col-sm-2 control-label">回调失败是否补偿消息</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(m => m[i].IsRetry, ((Dictionary<string, int>)ViewBag.IsRetry)
+               .Select(s =>
+               {
+                   return new SelectListItem()
+                   {
+                       Selected = Model[i].IsRetry.HasValue ? (Model[i].IsRetry.ToString() == s.Value.ToString()) : false,
+                       Text = s.Key,
+                       Value = s.Value.ToString()
+                   };
+               }), new { id = "c_ContentType", name = "c_ContentType", @class = "form-control" })
+                <p></p>
+            </div>
+        </div>
+    </fieldset>
+    count++;
+}
+

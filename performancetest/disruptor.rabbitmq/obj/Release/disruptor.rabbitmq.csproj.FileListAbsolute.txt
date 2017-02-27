@@ -1,0 +1,16 @@
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\disruptor.rabbitmq.exe.config
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\disruptor.rabbitmq.exe
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\disruptor.rabbitmq.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\Atomic.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\Disruptor.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\Disruptor.Scheduler.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\RabbitMQ.Client.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\Atomic.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\Atomic.xml
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\Disruptor.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\Disruptor.Scheduler.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\Disruptor.Scheduler.xml
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\bin\Release\RabbitMQ.Client.xml
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\obj\Release\disruptor.rabbitmq.csprojResolveAssemblyReference.cache
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\obj\Release\disruptor.rabbitmq.exe
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\disruptor.rabbitmq\obj\Release\disruptor.rabbitmq.pdb

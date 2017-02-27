@@ -1,0 +1,319 @@
+﻿@model YmatouMQAdmin.WebApp2.Models.MQConfigurationDto
+@{
+    ViewBag.Title = "消息总线消息属性配置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="body" class="container">
+
+    @using (Ajax.BeginForm("UpdateCodeDetailsCfg", "AdminMQ", new AjaxOptions
+    {
+        OnFailure = "busalert",
+        OnBegin = "onBegin",
+        OnComplete = "",
+        OnSuccess = ""
+    }, new { @class = "form-horizontal" }))
+    {
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">连接属性</legend>
+            <div class="control-group">
+                <label for="AppId" class="col-sm-2 control-label">AppID</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control list-group-item disabled" readonly="readonly" value="@Model.AppId" id="AppId" name="AppId" />
+                    <p></p>
+                </div>
+                <label for="host" class="col-sm-2 control-label">MQServer</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.host" id="host" name="host" />
+                    <p></p>
+                </div>
+                <label for="port" class="col-sm-2 control-label">port</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.port" id="port" name="port" />
+                    <p></p>
+                </div>
+                <label for="vhost" class="col-sm-2 control-label">vhost</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.vhost" id="vhost" name="vhost" />
+                    <p></p>
+                </div>
+                <label for="userName" class="col-sm-2 control-label">username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.userName" id="userName" name="userName" />
+                    <p></p>
+                </div>
+                <label for="password" class="col-sm-2 control-label">password</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.password" id="password" name="password" />
+                    <p></p>
+                </div>
+                <label for="connectionPool" class="col-sm-2 control-label">Tcp连接池</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.connectionPool" id="connectionPool" name="connectionPool" />
+                    <p class="text-left help-block  text-error"><small>格式：min-max，如：5-20</small></p>
+                </div>
+                <label for="channelPool" class="col-sm-2 control-label">channelPool</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.channelPool" id="channelPool" name="channelPool" />
+                    <p class="text-left help-block  text-error"><small>格式：min-max，如：5-20</small></p>
+                </div>
+                <label for="owerhost" class="col-sm-2 control-label">归属Host</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="@Model.owerhost" id="owerhost" name="owerhost" />
+                    <p></p>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">消息特性配置</legend>
+            <div class="control-group">
+                <label for="Code" class="col-sm-2 control-label">Code</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.Code, new { @class = "form-control list-group-item disabled", @readonly = "readonly", id = "Code", name = "Code" })
+                    <p></p>
+                </div>
+                <label for="Enable" class="col-sm-2 control-label">是否启用</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.Enable, new { @class = "form-control", id = "Enable", name = "Enable" })
+                    <p></p>
+                </div>
+                <label for="MessageCfgList_MessagePropertiesCfg_ContextType" class="col-sm-2 control-label">消息类型</label>
+                <div class="col-sm-10">
+                    <select id="MessageCfgList_MessagePropertiesCfg_ContextType" name="MessageCfgList.MessagePropertiesCfg.ContextType" class="form-control">
+                        @foreach (var type in ViewBag.ContextTypeArray)
+                        {
+                            <option @(type == Model.MessageCfgList.MessagePropertiesCfg.ContextType ? "selected" : "") value="@type">@type</option>
+                        }
+                    </select>
+                    <p></p>
+                </div>
+                <label for="MessageCfgList_MessagePropertiesCfg_ContentEncoding" class="col-sm-2 control-label">消息编码</label>
+                <div class="col-sm-10">
+                    <select id="MessageCfgList_MessagePropertiesCfg_ContentEncoding" name="MessageCfgList.MessagePropertiesCfg.ContentEncoding" class="form-control">
+                        @foreach (var type in ViewBag.ContentEncodingArray)
+                        {
+                            <option @(type == Model.MessageCfgList.MessagePropertiesCfg.ContentEncoding ? "selected" : "") value="@type">@type</option>
+                        }
+                    </select>
+                    <p></p>
+                </div>
+                <label for="Expiration" class="col-sm-2 control-label">过期时间（毫秒）</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.MessagePropertiesCfg.Expiration, new { @class = "form-control", id = "Expiration", name = "Expiration" })
+                    <p class="text-left help-block  text-error"><small>注：设定值则启用RabbitMQ TTL功能，为空则忽略该功能</small></p>
+                </div>
+                <label for="M_PersistentRabbitMQ" class="col-sm-2 control-label">RabbitMQ持久化消息</label>
+                <div class="col-sm-10">
+                    @Html.EditorFor(l => l.MessageCfgList.MessagePropertiesCfg.PersistentMessages, new { htmlAttributes = new { id = "M_PersistentRabbitMQ", name = "M_PersistentRabbitMQ", @class = "form-control" } })
+                    <p></p>
+                </div>
+                <label for="M_PersistentLocal" class="col-sm-2 control-label">本地持久化消息</label>
+                <div class="col-sm-10">
+                    @Html.EditorFor(l => l.MessageCfgList.MessagePropertiesCfg.PersistentMessagesLocal, new { htmlAttributes = new { id = "M_PersistentLocal", name = "M_PersistentLocal", @class = "form-control" } })
+                    <p></p>
+                </div>
+                <label for="M_PersistentMongo" class="col-sm-2 control-label">Mongodb保存发送记录</label>
+                <div class="col-sm-10">
+                    @Html.EditorFor(l => l.MessageCfgList.MessagePropertiesCfg.PersistentMessagesMongo, new { htmlAttributes = new { id = "M_PersistentMongo", name = "M_PersistentMongo", @class = "form-control" } })
+                    <p></p>
+                </div>
+                <label for="MessageCfgList_MessagePropertiesCfg_Priority" class="col-sm-2 control-label">优先级别</label>
+                <div class="col-sm-10">
+                    <select id="MessageCfgList_MessagePropertiesCfg_Priority" name="MessageCfgList.MessagePropertiesCfg.Priority" class="form-control">
+                        @foreach (var v in (Dictionary<string, int>)ViewBag.buffers)
+                        {
+                            <option @(v.Value == Model.MessageCfgList.MessagePropertiesCfg.Priority ? "selected" : "") value="@v.Value">@v.Key</option>
+                        }
+                    </select>
+                    <p class="text-left help-block  text-error"><small>注：优先级别越高的消息，优先被处理（0-9）</small></p>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">发布属性配置</legend>
+            <div class="control-group">
+                <label for="P_Confirms" class="col-sm-2 control-label">发布确认</label>
+                <div class="col-sm-10">
+                    @Html.EditorFor(l => l.MessageCfgList.PublishCfg.PublisherConfirms, new { htmlAttributes = new { id = "P_Confirms", name = "P_Confirms", @class = "form-control" } })
+                    <p class="text-left help-block  text-error"><small>注：发布确认类似事务提交，失败可回滚</small></p>
+                </div>
+                <label for="RouteKey" class="col-sm-2 control-label">消息路由</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.PublishCfg.RouteKey, new { @class = "form-control", id = "RouteKey", name = "RouteKey" })
+                    <p></p>
+                </div>
+                <label for="MessageCfgList_PublishCfg_RetryCount" class="col-sm-2 control-label">重试次数</label>
+                <div class="col-sm-10">
+                    <select id="MessageCfgList_PublishCfg_RetryCount" name="MessageCfgList.PublishCfg.RetryCount" class="form-control">
+                            @foreach (var v in (Dictionary<string, int>)ViewBag.PublishRetryCount)
+                            {
+                                <option @(v.Value == Model.MessageCfgList.PublishCfg.RetryCount ? "selected" : "") value="@v.Value">@v.Key</option>
+                            }
+                        </select>
+                    @*@Html.EditorFor(l => l.MessageCfgList.PublishCfg.RetryCount, new { htmlAttributes = new { id = "MessageCfgList_PublishCfg_RetryCount", name = "MessageCfgList_PublishCfg_RetryCount", @class = "form-control" } })*@
+                    <p class="text-left help-block  text-error"><small>注：发布失败本地重试</small></p>
+                </div>
+                <label for="MessageCfgList_PublishCfg_RetryMillisecond" class="col-sm-2 control-label">重试间隔（毫秒）</label>
+                <div class="col-sm-10">
+                    <select id="MessageCfgList_PublishCfg_RetryMillisecond" name="MessageCfgList.PublishCfg.RetryMillisecond" class="form-control">
+                        @foreach (var v in (Dictionary<string, int>)ViewBag.PublishRetryMillisecond)
+                        {
+                            <option @(v.Value == Model.MessageCfgList.PublishCfg.RetryMillisecond ? "selected" : "") value="@v.Value">@v.Key</option>
+                        }
+                    </select>
+                    <p class="text-left help-block  text-error"><small>注：发布失败本地重试</small></p>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">消费属性配置</legend>
+            <div class="control-group">
+                <label for="CRoutingKey" class="col-sm-2 control-label">消息路由</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.ConsumeCfg.RoutingKey, new { @class = "form-control", id = "CRoutingKey", name = "CRoutingKey" })
+                    <p></p>
+                </div>
+                <label for="C_AutoAck" class="col-sm-2 control-label">自动发送ACK</label>
+                <div class="col-sm-10">
+                    @Html.EditorFor(l => l.MessageCfgList.ConsumeCfg.IsAutoAcknowledge, new { htmlAttributes = new { id = "C_AutoAck", name = "C_AutoAck", @class = "form-control" } })
+                    <p class="text-left help-block  text-error"><small>注：自动ACK性能高，但如果异常会丢消息</small></p>
+                </div>
+                <label for="C_FailAck" class="col-sm-2 control-label">业务端处理失败ACK</label>
+                <div class="col-sm-10">
+                    @Html.EditorFor(l => l.MessageCfgList.ConsumeCfg.HandleFailAcknowledge, new { htmlAttributes = new { id = "C_FailAck", name = "C_FailAck", @class = "form-control" } })
+                    <p class="text-left help-block  text-error"><small>注：业务端处理失败根据配置决定是否补偿消息</small></p>
+                </div>
+                <label for="PrefetchCount" class="col-sm-2 control-label">QOS</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.ConsumeCfg.PrefetchCount, new { @class = "form-control", id = "PrefetchCount", name = "PrefetchCount" })
+                    <p></p>
+                </div>
+                <label for="MaxThreadCount" class="col-sm-2 control-label">回调业务端并发数</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.ConsumeCfg.MaxThreadCount, new { @class = "form-control", id = "MaxThreadCount", name = "MaxThreadCount" })
+                    <p></p>
+                </div>
+                <label for="RetryTimeOut" class="col-sm-2 control-label">消息补偿超时</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.ConsumeCfg.RetryTimeOut, new { @class = "form-control", id = "RetryTimeOut", name = "RetryTimeOut" })
+                    <p class="text-left help-block  text-error"><small>注：单位分钟，为空则不补偿</small> </p>
+                </div>
+                <label for="C_SendNotice" class="col-sm-2 control-label">mongodb记录处理结果</label>
+                <div class="col-sm-10">
+                    @Html.EditorFor(l => l.MessageCfgList.ConsumeCfg.HandleSuccessSendNotice, new { htmlAttributes = new { id = "C_SendNotice", name = "C_SendNotice", @class = "form-control" } })
+                    <p class="text-left help-block  text-error"><small>注：业务端处理失败根据配置决定是否补偿消息</small></p>
+                </div>
+                @if (((bool)ViewBag.IsDisplayDictionaryControl) == true)
+                {
+                    <label for="MessageCfgList_ConsumeCfg_Args" class="col-sm-2 control-label">其他特性配置</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="5" cols="30" id="MessageCfgList_ConsumeCfg_Args" name="MessageCfgList_ConsumeCfg_Args">@*@Model.MessageCfgList.ConsumeCfg.Args*@</textarea>
+                        <p></p>
+                    </div>
+                }
+            </div>
+        </fieldset>
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">交换机属性配置</legend>
+            <div class="control-group">
+                <label for="ExchangeName" class="col-sm-2 control-label">交换机名称</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.ExchangeCfg.ExchangeName, new { @class = "form-control list-group-item disabled", @readonly = "readonly", id = "ExchangeName", name = "ExchangeName" })
+                    <p></p>
+                </div>
+                <label for="ExchangeType" class="col-sm-2 control-label">交换机类型</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.ExchangeCfg._ExchangeType, new { @class = "form-control list-group-item disabled", @readonly = "readonly", id = "ExchangeType", name = "ExchangeType" })
+                    <p></p>
+                </div>
+                <label for="E_AutoDelete" class="col-sm-2 control-label">是否自动删除</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.ExchangeCfg.IsExchangeAutoDelete, new { @class = "form-control list-group-item disabled", @readonly = "readonly", id = "E_AutoDelete", name = "E_AutoDelete" })
+                    <p></p>
+                </div>
+                <label for="E_Durable" class="col-sm-2 control-label">是否持久化</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.ExchangeCfg.Durable, new { @class = "form-control list-group-item disabled", @readonly = "readonly", id = "E_Durable", name = "MessageCfgList.ExchangeCfg.Durable" })
+                    <p></p>
+                </div>
+                @if (((bool)ViewBag.IsDisplayDictionaryControl) == true)
+                {
+                    <label for="MessageCfgList_ExchangeCfg_Args" class="col-sm-2 control-label">其他特性配置</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="5" cols="30" id="MessageCfgList_ExchangeCfg_Args" name="MessageCfgList_ExchangeCfg_Args"></textarea>
+                        <p></p>
+                    </div>
+                }
+            </div>
+        </fieldset>
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">队列属性配置</legend>
+            <div class="control-group">
+                <label for="QueueName" class="col-sm-2 control-label">队列名称</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.QueueCfg.QueueName, new { @class = "form-control  list-group-item disabled", @readonly = "readonly", id = "QueueName", name = "MessageCfgList.QueueCfg.QueueName" })
+                    <p></p>
+                </div>
+                <label for="MessageCfgList_QueueCfg_IsDurable" class="col-sm-2 control-label">是否持久化</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.QueueCfg.IsDurable, new { id = "MessageCfgList_QueueCfg_IsDurable", name = "MessageCfgList.QueueCfg.IsDurable", @class = "form-control list-group-item disabled", @readonly = "readonly" })
+                    <p></p>
+                </div>
+                <label for="MessageCfgList_QueueCfg_IsAutoDelete" class="col-sm-2 control-label">是否自动删除</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.QueueCfg.IsAutoDelete, new { id = "MessageCfgList_QueueCfg_IsAutoDelete", name = "MessageCfgList.QueueCfg.IsAutoDelete", @class = "form-control list-group-item disabled", @readonly = "readonly" })
+                    <p></p>
+                </div>
+                <label for="MessageCfgList_QueueCfg_IsQueueExclusive" class="col-sm-2 control-label">是否独占</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(l => l.MessageCfgList.QueueCfg.IsQueueExclusive, new { id = "MessageCfgList_QueueCfg_IsQueueExclusive", name = "MessageCfgList.QueueCfg.IsQueueExclusive", @class = "form-control   list-group-item disabled", @readonly = "readonly" })
+                    <p class="text-left help-block  text-error"><small>注：当VHost 为 / ,不要设置该值，默认为False</small></p>
+                </div>
+                @if (((bool)ViewBag.IsDisplayDictionaryControl) == true)
+                {
+                    <label for="MessageCfgList_QueueCfg_Args" class="col-sm-2 control-label">其他特性配置</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="5" cols="30" id="MessageCfgList_QueueCfg_Args" name="MessageCfgList_QueueCfg_Args"></textarea>
+                        <p></p>
+                    </div>
+                    <label for="MessageCfgList_QueueCfg_HeadArgs" class="col-sm-2 control-label">队列头部属性</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="5" cols="30" id="MessageCfgList_QueueCfg_HeadArgs" name="MessageCfgList_QueueCfg_HeadArgs"></textarea>
+                        <p></p>
+                    </div>
+                }
+            </div>
+        </fieldset>
+        <div id="button">
+            <input id="save" type="submit" class="btn btn-primary" value="保存" />
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#save").click(function () {
+
+            if ($("#MessageCfgList_ExchangeCfg_Arguments").val() == "") {
+                $("#MessageCfgList_ExchangeCfg_Arguments").val("{value:null}");
+            }
+
+            if ($("#MessageCfgList_ConsumeCfg_Args").val() == "") {
+                $("#MessageCfgList_ConsumeCfg_Args").val("{value:null}");
+            }
+
+            if ($("#MessageCfgList_QueueCfg_Args").val() == "") {
+                $("#MessageCfgList_QueueCfg_Args").val("{value:null}");
+            }
+            if ($("#MessageCfgList_QueueCfg_HeadArgs").val() == "") {
+                $("#MessageCfgList_QueueCfg_HeadArgs").val("{value:null}");
+            }
+            if ($("#CRoutingKey").val() != $("#RouteKey").val()) {
+                busalert("发布消息，消费消息路由必须相同");
+                return false;
+            }
+            // alert($("#MessageCfgList_QueueCfg_Args").val());
+        })
+    })
+</script>

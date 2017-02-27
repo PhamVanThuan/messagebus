@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="script/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#appid").val("test2");
+            $("#code").val("liguo");
+            $("#pub").click(function () {
+                $("#info").html("发送中...");
+              
+                var d = JSON.stringify(
+                    {
+                        "appid": $("#appid").val().trim()
+                        , "code": $("#code").val().trim()
+                        , "body": $("#ss").val().trim()
+                        , "Num": $("#num").val().trim()
+                        , "UseWebClient": $("#usewebclient")[0].checked        
+                    });
+                $.post("PublishMessage", d,
+                    function (data) {
+                        $("#info").html(data);
+                    }, "json").error(function (err) {
+                        $("#info").html(err.responseText);
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="pub" value="点击发送消息" />
+    使用WebClient？:<input type="checkbox" id="usewebclient" checked="checked" name="usewebclient" value="y" />
+    重复数：<input id="num" value="1" />
+    AppId: 
+    <input id="appid" value="test" />
+    Code: 
+    <input id="code" value="A" />
+    结果:<span id="info"></span>
+    <br />
+    内容：
+    <br />
+    <textarea id="ss" style="margin: 0px; height: 389px; width: 926px;"></textarea>
+</body>
+</html>

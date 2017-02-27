@@ -1,0 +1,137 @@
+﻿@model YmatouMQAdmin.WebApp2.Models.AppInitializeModel
+@{
+    ViewBag.Title = "增加应用配置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="form-horizontal">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">创建AppId</legend>
+            <div class="control-group">
+                <label for="AppId" class="col-sm-2 control-label">AppID</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.AppId, new { @class = "form-control", id = "AppId", name = "AppId" })
+                    <p></p>
+                </div>
+                <label for="ownerHost" class="col-sm-2 control-label">归属Host</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.ownerHost, new { @class = "form-control", id = "ownerHost", name = "ownerHost" })
+                    <p class="text-left help-block  text-error"><small>*可选,填写IP后2段位，多个ip间英文逗号分割</small> </p>
+                </div>
+                <label for="IsUseDefault" class="col-sm-2 control-label" style="padding-top:0px">默认MQServer?</label>
+                <div class="col-sm-10" style="text-align:left">
+                    <input type="checkbox" id="IsUseDefault" name="IsUseDefault" checked="checked" />
+                    <p></p>
+                </div>
+            </div>
+            <div class="control-group" style="display:none" id="ConnectionPanel">
+                <label for="host" class="col-sm-2 control-label">Host</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.host, new { @class = "form-control", id = "host", name = "host" })
+                    <p></p>
+                </div>
+                <label for="port" class="col-sm-2 control-label">port</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.port, new { @class = "form-control", id = "port", name = "port" })
+                    <p></p>
+                </div>
+                <label for="vhost" class="col-sm-2 control-label">vhost</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.vhost, new { @class = "form-control", id = "vhost", name = "vhost" })
+                    <p></p>
+                </div>
+                <label for="userName" class="col-sm-2 control-label">userName</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.userName, new { @class = "form-control", id = "userName", name = "userName" })
+                    <p></p>
+                </div>
+                <label for="password" class="col-sm-2 control-label">password</label>
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.password, new { @class = "form-control", id = "password", name = "password" })
+                    <p></p>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div id="button">
+        <input id="submit" type="submit" class="btn btn-primary" value="确认创建" /> <a href="javascript:history.back()" class="btn btn-warning">返回</a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+       // var div = $("#form");
+
+        var isDefault = $("#IsUseDefault").is(":checked");
+
+        if (isDefault == true) {
+            $("#ConnectionPanel").hide();
+        }
+        else {
+            $("#ConnectionPanel").css("display", "inline");
+        }
+
+        $("#IsUseDefault").click(function () {
+            isDefault = $("#IsUseDefault").is(":checked");
+            // alert(isDefault);
+            $("#IsUseDefault").val(isDefault);
+            if (isDefault == true) {
+                $("#ConnectionPanel").hide();
+            }
+            else {
+                $("#ConnectionPanel").css("display", "inline");
+            }
+        })
+
+        $("#submit").click(function () {
+            var _appid = $("#AppId").val();
+
+            if (_appid == "") {             
+                busalert("应用程序ID不能为空!");
+                return false;
+            }
+            if (_appid.toLowerCase() == "default") {
+                busalert("appid不能包含default");
+                return false;
+            }
+            if (_appid.indexOf(".") > 0) {               
+                busalert("应用程序ID不能包含 '.'");
+                return false;
+            }
+            $.post("/AdminMQ/ValidateApp?appId=" + _appid, function (data) {
+                if (!data.success) {
+                    busalert(data.message);
+                    return;
+                }
+                else {
+                    var host = $("#host").val();
+                    var port = $("#port").val();
+                    var vhost = $("#vhost").val();
+                    var userName = $("#userName").val();
+                    var password = $("#password").val();
+                    var ownerHost = $("#ownerHost").val();
+                    var subData = {
+                        AppId: _appid,
+                        host: host,
+                        port: port,
+                        vhost: vhost,
+                        userName: userName,
+                        password: password,
+                        ownerHost: ownerHost
+                    };                
+
+                    $.post("/AdminMQ/SaveApp?AppId=" + _appid + "&host=" + host + "&port=" + port + "&vhost=" + vhost + "&userName=" + userName + "&password=" + password + "&IsUseDefault=" + isDefault + "&ownerHost=" + ownerHost, function (data) {
+                        if (data.success) {
+                            busalert(data.msg);
+                        }
+                        else {
+                            busalert(data.msg);
+                        }
+                    })
+                }
+            })
+        })
+
+    })
+</script>

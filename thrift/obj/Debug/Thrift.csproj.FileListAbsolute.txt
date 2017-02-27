@@ -1,0 +1,4 @@
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\thrift\bin\Debug\Thrift.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\thrift\bin\Debug\Thrift.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\thrift\obj\Debug\Thrift.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\thrift\obj\Debug\Thrift.pdb

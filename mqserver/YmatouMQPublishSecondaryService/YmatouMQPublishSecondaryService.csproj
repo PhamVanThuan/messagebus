@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9A3DE31-5B25-4507-B799-8719950B05E6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YmatouMQPublishSecondaryService</RootNamespace>
+    <AssemblyName>YmatouMQPublishSecondaryService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LimitsMiddleware">
+      <HintPath>..\..\packages\LimitsMiddleware.3.0.0\lib\net45\LimitsMiddleware.dll</HintPath>
+    </Reference>
+    <Reference Include="LimitsMiddleware.OwinAppBuilder">
+      <HintPath>..\..\packages\LimitsMiddleware.OwinAppBuilder.3.0.0\lib\net45\LimitsMiddleware.OwinAppBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Diagnostics">
+      <HintPath>..\..\packages\Microsoft.Owin.Diagnostics.3.0.1\lib\net45\Microsoft.Owin.Diagnostics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.HttpListener.3.0.1\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting">
+      <HintPath>..\..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nowin">
+      <HintPath>..\..\packages\Nowin.0.16.0.0\lib\net45\Nowin.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\packages\ServiceStack.Text.4.0.34\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.SelfHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Http.SelfHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Ymatou.Log, Version=1.1.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ymatou.Log.1.1.0.5\lib\net40\Ymatou.Log.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ymatou.MonitorClient, Version=1.0.6.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ymatou.MonitorClient.1.0.6.3\lib\net40\Ymatou.MonitorClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\YmatouMQServerConsoleApp\ExceptionHandlerAttribute.cs">
+      <Link>ExceptionHandlerAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ymatoumqserverconsoleapp\handler\MessageController.cs">
+      <Link>Handler\MessageController.cs</Link>
+    </Compile>
+    <Compile Include="..\ymatoumqserverconsoleapp\handler\MessageRequestHandler.cs">
+      <Link>Handler\MessageRequestHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\ymatoumqserverconsoleapp\handler\MQOwinBase.cs">
+      <Link>Handler\MQOwinBase.cs</Link>
+    </Compile>
+    <Compile Include="..\YmatouMQServerConsoleApp\MQServerBootStart_Owin.cs">
+      <Link>MQServerBootStart_Owin.cs</Link>
+    </Compile>
+    <Compile Include="..\ymatoumqserverconsoleapp\owin\AutoTuneMiddleware.cs">
+      <Link>owin\AutoTuneMiddleware.cs</Link>
+    </Compile>
+    <Compile Include="..\ymatoumqserverconsoleapp\owin\CanonicalRequestAttribute.cs">
+      <Link>owin\CanonicalRequestAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\ymatoumqserverconsoleapp\owin\RequestMonitorMiddleware.cs">
+      <Link>owin\RequestMonitorMiddleware.cs</Link>
+    </Compile>
+    <Compile Include="..\ymatoumqserverconsoleapp\owin\Util.cs">
+      <Link>owin\Util.cs</Link>
+    </Compile>
+    <Compile Include="..\ymatoumqserverconsoleapp\owin\_OWinResponse.cs">
+      <Link>owin\_OWinResponse.cs</Link>
+    </Compile>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YmatouMQPublishSecondaryService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="YmatouMQPublishSecondaryService.Designer.cs">
+      <DependentUpon>YmatouMQPublishSecondaryService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YmatouMQPublishSecondaryService.resx">
+      <DependentUpon>YmatouMQPublishSecondaryService.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\YmatouMQ.Common\YmatouMQ.Common.csproj">
+      <Project>{8040a5d8-1087-4dc1-a7d0-3ca3da79b762}</Project>
+      <Name>YmatouMQ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.ConfigurationSync\YmatouMQ.ConfigurationSync.csproj">
+      <Project>{6b47e320-e366-4992-9af8-2099be6366be}</Project>
+      <Name>YmatouMQ.ConfigurationSync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.Configuration\YmatouMQ.Configuration.csproj">
+      <Project>{7e1fd70e-5017-44a7-b260-a29e35ba4993}</Project>
+      <Name>YmatouMQ.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.Connection\YmatouMQ.Connection.csproj">
+      <Project>{1f6d300e-c2e4-453c-af13-ed9df3317de3}</Project>
+      <Name>YmatouMQ.Connection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.Core\YmatouMQ.Publish.csproj">
+      <Project>{dddbe334-d0de-4e07-a772-6261cc47af01}</Project>
+      <Name>YmatouMQ.Publish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.Log\YmatouMQ.Log.csproj">
+      <Project>{cfffaa58-248c-4719-bcd3-30dfd76664e2}</Project>
+      <Name>YmatouMQ.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQMessageMongodb\YmatouMQ.MessageMongodb.csproj">
+      <Project>{3ac029b8-e25c-4adb-913b-895cac500bb4}</Project>
+      <Name>YmatouMQ.MessageMongodb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nuget\NuGet.exe" />
+    <Content Include="nuget\NuGetPackageUploader.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

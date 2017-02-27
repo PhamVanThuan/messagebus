@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LimitsMiddleware.OwinAppBuilder</name>
+    </assembly>
+    <members>
+        <member name="M:Owin.AppBuilderExtensions.MaxRequestContentLength(Owin.IAppBuilder,System.Int32)">
+            <summary>
+            Limits the length of the request content.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="maxContentLength">Maximum length of the content.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxRequestContentLength(Owin.IAppBuilder,System.Func{System.Int32})">
+            <summary>
+            Limits the length of the request content.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxContentLength">A delegate to get the maximum content length.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxRequestContentLength(Owin.IAppBuilder,System.Func{LimitsMiddleware.RequestContext,System.Int32})">
+            <summary>
+            Limits the length of the request content.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxContentLength">A delegate to get the maximum content length.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxQueryStringLength(Owin.IAppBuilder,System.Int32)">
+            <summary>
+            Limits the length of the query string.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="maxQueryStringLength">Maximum length of the query string.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxQueryStringLength(Owin.IAppBuilder,System.Func{System.Int32})">
+            <summary>
+            Limits the length of the query string.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxQueryStringLength">A delegate to get the maximum query string length.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxQueryStringLength(Owin.IAppBuilder,System.Func{LimitsMiddleware.RequestContext,System.Int32})">
+            <summary>
+            Limits the length of the query string.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxQueryStringLength">A delegate to get the maximum query string length.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxConcurrentRequests(Owin.IAppBuilder,System.Int32)">
+            <summary>
+            Limits the number of concurrent requests that can be handled used by the subsequent stages in the owin pipeline.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="maxConcurrentRequests">The maximum number of concurrent requests. Use 0 or a negative
+            number to specify unlimited number of concurrent requests.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxConcurrentRequests(Owin.IAppBuilder,System.Func{System.Int32})">
+            <summary>
+            Limits the number of concurrent requests that can be handled used by the subsequent stages in the owin pipeline.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxConcurrentRequests">A delegate to retrieve the maximum number of concurrent requests. Allows you
+            to supply different values at runtime. Use 0 or a negative number to specify unlimited number of concurrent requests.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxConcurrentRequests(Owin.IAppBuilder,System.Func{LimitsMiddleware.RequestContext,System.Int32})">
+            <summary>
+            Limits the number of concurrent requests that can be handled used by the subsequent stages in the owin pipeline.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxConcurrentRequests">A delegate to retrieve the maximum number of concurrent requests. Allows you
+            to supply different values at runtime. Use 0 or a negative number to specify unlimited number of concurrent requests.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxBandwidthPerRequest(Owin.IAppBuilder,System.Int32)">
+            <summary>
+            Limits the bandwith used by the subsequent stages in the owin pipeline.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="maxBytesPerSecond">The maximum number of bytes per second to be transferred. Use 0 or a negative
+            number to specify infinite bandwidth.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxBandwidthPerRequest(Owin.IAppBuilder,System.Func{System.Int32})">
+            <summary>
+            Limits the bandwith used by the subsequent stages in the owin pipeline.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxBytesPerSecond">A delegate to retrieve the maximum number of bytes per second to be transferred.
+            Allows you to supply different values at runtime. Use 0 or a negative number to specify infinite bandwidth.</param>
+            <returns>The app instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxBandwidthPerRequest(Owin.IAppBuilder,System.Func{LimitsMiddleware.RequestContext,System.Int32})">
+            <summary>
+            Limits the bandwith used by the subsequent stages in the owin pipeline.
+            </summary>
+            <param name="getMaxBytesPerSecond">A delegate to retrieve the maximum number of bytes per second to be transferred.
+            Allows you to supply different values at runtime. Use 0 or a negative number to specify infinite bandwidth.</param>
+            <returns>An OWIN middleware delegate.</returns>
+            <param name="app">The IAppBuilder instance.</param>
+            <exception cref="T:System.ArgumentNullException">app</exception>
+            <exception cref="T:System.ArgumentNullException">getMaxBytesPerSecond</exception>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxUrlLength(Owin.IAppBuilder,System.Int32)">
+            <summary>
+            Limits the length of the URL.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="maxUrlLength">Maximum length of the URL.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxUrlLength(Owin.IAppBuilder,System.Func{System.Int32})">
+            <summary>
+            Limits the length of the URL.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxUrlLength">A delegate to get the maximum URL length.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxUrlLength(Owin.IAppBuilder,System.Func{LimitsMiddleware.RequestContext,System.Int32})">
+            <summary>
+            Limits the length of the URL.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxUrlLength">A delegate to get the maximum URL length.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.ConnectionTimeout(Owin.IAppBuilder,System.TimeSpan)">
+            <summary>
+            Timeouts the connection if there hasn't been an read activity on the request body stream or any
+            write activity on the response body stream.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="timeout">The timeout.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.ConnectionTimeout(Owin.IAppBuilder,System.Func{System.TimeSpan})">
+            <summary>
+            Timeouts the connection if there hasn't been an read activity on the request body stream or any
+            write activity on the response body stream.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getTimeout">A delegate to retrieve the timeout timespan. Allows you
+            to supply different values at runtime.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.ConnectionTimeout(Owin.IAppBuilder,System.Func{LimitsMiddleware.RequestContext,System.TimeSpan})">
+            <summary>
+            Timeouts the connection if there hasn't been an read activity on the request body stream or any
+            write activity on the response body stream.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getTimeout">A delegate to retrieve the timeout timespan. Allows you
+            to supply different values at runtime.</param>
+            <returns>An OWIN middleware delegate.</returns>
+            <exception cref="T:System.ArgumentNullException">getTimeout</exception>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MinResponseDelay(Owin.IAppBuilder,System.Int32)">
+            <summary>
+            Sets a minimum delay before sending the response.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="minDelay">The maximum number of bytes per second to be transferred. Use 0 or a negative
+            number to specify infinite bandwidth.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MinResponseDelay(Owin.IAppBuilder,System.Func{System.Int32})">
+            <summary>
+            Sets a minimum delay before sending the response.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMinDelay">A delegate to retrieve the maximum number of bytes per second to be transferred.
+            Allows you to supply different values at runtime. Use 0 or a negative number to specify infinite bandwidth.</param>
+            <returns>The app instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MinResponseDelay(Owin.IAppBuilder,System.Func{System.TimeSpan})">
+            <summary>
+            Sets a minimum delay before sending the response.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMinDelay">A delegate to retrieve the maximum number of bytes per second to be transferred.
+            Allows you to supply different values at runtime. Use 0 or a negative number to specify infinite bandwidth.</param>
+            <returns>The app instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MinResponseDelay(Owin.IAppBuilder,System.Func{LimitsMiddleware.RequestContext,System.TimeSpan})">
+            <summary>
+            Sets a minimum delay before sending the response.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMinDelay">A delegate to retrieve the maximum number of bytes per second to be transferred.
+            Allows you to supply different values at runtime. Use 0 or a negative number to specify infinite bandwidth.</param>
+            <returns>The app instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxBandwidthGlobal(Owin.IAppBuilder,System.Int32)">
+            <summary>
+            Limits the bandwith used globally by the subsequent stages in the owin pipeline.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="maxBytesPerSecond">The maximum number of bytes per second to be transferred. Use 0 or a negative
+            number to specify infinite bandwidth.</param>
+            <returns>The IAppBuilder instance.</returns>
+        </member>
+        <member name="M:Owin.AppBuilderExtensions.MaxBandwidthGlobal(Owin.IAppBuilder,System.Func{System.Int32})">
+            <summary>
+            Limits the bandwith used globally by the subsequent stages in the owin pipeline.
+            </summary>
+            <param name="app">The IAppBuilder instance.</param>
+            <param name="getMaxBytesPerSecond">A delegate to retrieve the maximum number of bytes per second to be transferred.
+            Allows you to supply different values at runtime. Use 0 or a negative number to specify infinite bandwidth.</param>
+            <returns>The app instance.</returns>
+        </member>
+    </members>
+</doc>

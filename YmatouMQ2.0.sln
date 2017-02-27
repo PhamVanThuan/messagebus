@@ -1,0 +1,550 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9A2208A2-4955-4CEB-B1D8-90109049EC8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{83AC3A6C-7DA6-482C-B03F-F7BB90408DD1}"
+	ProjectSection(SolutionItems) = preProject
+		lib\Atomic.dll = lib\Atomic.dll
+		lib\Atomic.pdb = lib\Atomic.pdb
+		lib\Atomic.xml = lib\Atomic.xml
+		lib\Disruptor.dll = lib\Disruptor.dll
+		lib\Disruptor.pdb = lib\Disruptor.pdb
+		lib\Disruptor.Scheduler.dll = lib\Disruptor.Scheduler.dll
+		lib\Disruptor.Scheduler.pdb = lib\Disruptor.Scheduler.pdb
+		lib\Disruptor.Scheduler.xml = lib\Disruptor.Scheduler.xml
+		..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\MongoDB.Bson.dll = ..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\MongoDB.Bson.dll
+		lib\MongoDB.Bson.xml = lib\MongoDB.Bson.xml
+		..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\MongoDB.Bson.xml = ..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\MongoDB.Bson.xml
+		lib\MongoDB.Driver.dll = lib\MongoDB.Driver.dll
+		..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\MongoDB.Driver.dll = ..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\MongoDB.Driver.dll
+		..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\MongoDB.Driver.xml = ..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\MongoDB.Driver.xml
+		lib\ServiceStack.Client.dll = lib\ServiceStack.Client.dll
+		lib\ServiceStack.Client.xml = lib\ServiceStack.Client.xml
+		lib\ServiceStack.Common.dll = lib\ServiceStack.Common.dll
+		lib\ServiceStack.Common.xml = lib\ServiceStack.Common.xml
+		lib\ServiceStack.dll = lib\ServiceStack.dll
+		lib\ServiceStack.Interfaces.dll = lib\ServiceStack.Interfaces.dll
+		lib\ServiceStack.Interfaces.xml = lib\ServiceStack.Interfaces.xml
+		lib\ServiceStack.Text.dll = lib\ServiceStack.Text.dll
+		lib\ServiceStack.Text.xml = lib\ServiceStack.Text.xml
+		lib\ServiceStack.xml = lib\ServiceStack.xml
+		lib\YmtSystem.Domain.IMongodb.dll = lib\YmtSystem.Domain.IMongodb.dll
+		..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\YmtSystem.Domain.IMongodb.dll = ..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\YmtSystem.Domain.IMongodb.dll
+		lib\YmtSystem.Domain.IMongodb.pdb = lib\YmtSystem.Domain.IMongodb.pdb
+		..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\YmtSystem.Domain.IMongodb.pdb = ..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\YmtSystem.Domain.IMongodb.pdb
+		lib\YmtSystem.Repository.Mongodb.dll = lib\YmtSystem.Repository.Mongodb.dll
+		..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\YmtSystem.Repository.Mongodb.dll = ..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\YmtSystem.Repository.Mongodb.dll
+		lib\YmtSystem.Repository.Mongodb.pdb = lib\YmtSystem.Repository.Mongodb.pdb
+		..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\YmtSystem.Repository.Mongodb.pdb = ..\..\YmatouMongodbRepository\Main\src\YmtSystem.Repository.Mongodb\bin\Debug\YmtSystem.Repository.Mongodb.pdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{740B35FD-71D5-4A46-AB25-65B8107440E5}"
+	ProjectSection(SolutionItems) = preProject
+		doc\YamtouMQConfig.config = doc\YamtouMQConfig.config
+		doc\YamtouMQSystem.Config = doc\YamtouMQSystem.Config
+		doc\ymatouMQ 设计文档.docx = doc\ymatouMQ 设计文档.docx
+		doc\ymatoumqdefault.config = doc\ymatoumqdefault.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{225EF958-7324-4CCE-B101-B5E14BF3774D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{D120D2E3-BB9F-442A-BE3E-3B4B28F43807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.Publish", "src\YmatouMQ.Core\YmatouMQ.Publish.csproj", "{DDDBE334-D0DE-4E07-A772-6261CC47AF01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQTest", "test\YmatouMQTest\YmatouMQTest.csproj", "{1A46838C-8377-42E4-A7E3-00C491F04E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamtouMQ2_0Demo", "demo\YamtouMQ2_0Demo\YamtouMQ2_0Demo.csproj", "{C6136B47-0C38-4FE4-98CB-41A4C6AA249C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQSubscribeConsoleApplication", "test\YmatouMQConsoleApplication\YmatouMQSubscribeConsoleApplication.csproj", "{7938CF52-15C8-4669-AB30-3A396F250193}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQPubllishConsoleApplication", "test\YmatouMQPubllishConsoleApplication\YmatouMQPubllishConsoleApplication.csproj", "{781D5D62-59EF-4785-99A3-8BB9B8AB10B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "performancetest", "performancetest", "{43D9D2BB-A04B-4303-A03A-47BCE9A38BC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublishTest", "performancetest\PublishTest\PublishTest.csproj", "{B27B5954-A204-44F7-9939-3A0F3CE123BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQConnectionConsoleApplication", "test\YmatouMQConnectionConsoleApplication\YmatouMQConnectionConsoleApplication.csproj", "{65373B79-1C4E-403D-9B93-EA138563A198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubscribeTest", "performancetest\SubscribeTest\SubscribeTest.csproj", "{274E8944-7C3F-4CD5-8D72-6D45362A2DC7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mqadmin", "mqadmin", "{42FE9CD8-8B9B-4AE1-80A5-D2CC3119695B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQAdmin.Domain", "mqadmin\YmatouMQAdmin.Domain\YmatouMQAdmin.Domain.csproj", "{9FA33E64-672E-4C5F-B02D-4A560CF6865D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQAdminTest", "test\YmatouMQAdminTest\YmatouMQAdminTest.csproj", "{EDCECA0A-CD33-4D79-9B94-7B33691C17A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQAdmin.WebApp2", "mqadmin\YmatouMQAdmin.WebApp2\YmatouMQAdmin.WebApp2.csproj", "{01280F80-9503-46F0-A67C-31A6940E5684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQConfigurationConsoleApplication", "test\YmatouMQConfigurationConsoleApplication\YmatouMQConfigurationConsoleApplication.csproj", "{257C7085-F365-40DF-A89C-FA914B59FE71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQAdmin.Repository2", "mqadmin\YmatouMQAdmin.Repository2\YmatouMQAdmin.Repository2.csproj", "{715EFA16-C970-40BF-A6E4-212A2BC9E795}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mqserver", "mqserver", "{6B2E1F8E-8B29-4F0B-9329-6C18D9AE74E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mqconsume", "mqconsume", "{A0D19BE3-B20F-43A4-90A4-D68B59186422}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQConsumeService", "mqconsume\YmatouMQConsume\YmatouMQConsumeService.csproj", "{72E5E5C7-68F1-4C61-BBB1-2F3D48C6618D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmqtouMQConsumeDemo.Web", "demo\YmqtouMQConsumeDemo.Web\YmqtouMQConsumeDemo.Web.csproj", "{292FDB23-1875-4A68-BB14-8E9364EACE38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQConsume.AppConsole", "mqconsume\YmatouMQConsume.AppConsole\YmatouMQConsume.AppConsole.csproj", "{3124AFF0-C90B-42EB-8A17-39547B8E9E21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.MessageScheduler", "src\YmatouMQMessageHandlerScheduler\YmatouMQ.MessageScheduler.csproj", "{3CCBE840-2B24-4CC1-9190-347189607030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "disruptor.rabbitmq", "performancetest\disruptor.rabbitmq\disruptor.rabbitmq.csproj", "{BD6703AD-DA5C-42CD-B423-CB930991551C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskQueueTest", "performancetest\TaskQueueTest\TaskQueueTest.csproj", "{84B199F4-F12A-402C-A8C2-1F58E52B2035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQPublishService", "mqserver\YmatouMQServerWinService\YmatouMQPublishService.csproj", "{FE8A6AD7-CC56-41C7-83BA-9B27104ECC0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.Server.ConsoleApp", "mqserver\YmatouMQServerConsoleApp\YmatouMQ.Server.ConsoleApp.csproj", "{8729CB6F-F1E1-4988-9704-BD3ABF781712}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQServerHost", "test\YmatouMQServerHost\YmatouMQServerHost.csproj", "{1D89A2FF-D611-46C4-A49F-AB8748E65B67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{204F17D9-6AD7-4E89-9E5A-3B5C36C3C56E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.MessageMongodb", "src\YmatouMQMessageMongodb\YmatouMQ.MessageMongodb.csproj", "{3AC029B8-E25C-4ADB-913B-895CAC500BB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.ClientNet4", "src\YmatouMQClientNet4\YmatouMQ.ClientNet4.csproj", "{8014E3FE-942F-4FC8-A1E7-E01DED8DA995}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.Subscribe", "src\YmatouMQSubscribe\YmatouMQ.Subscribe.csproj", "{3EE7972E-67C9-4459-8165-2EFCA8DF5D52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.Common", "src\YmatouMQ.Common\YmatouMQ.Common.csproj", "{8040A5D8-1087-4DC1-A7D0-3CA3DA79B762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.Log", "src\YmatouMQ.Log\YmatouMQ.Log.csproj", "{CFFFAA58-248C-4719-BCD3-30DFD76664E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.MessageCompensateService", "src\YmatouMQ.MessageCompensate\YmatouMQ.MessageCompensateService.csproj", "{4BA7E6B3-73C1-4A65-8825-DC24CE82461E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.MessageCompensateTest", "test\YmatouMQ.MessageCompensateTest\YmatouMQ.MessageCompensateTest.csproj", "{91E08F30-807A-44C2-A337-25E1403DB3F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.Configuration", "src\YmatouMQ.Configuration\YmatouMQ.Configuration.csproj", "{7E1FD70E-5017-44A7-B260-A29E35BA4993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.MessageCompensate.Server.ConsoleApp", "mqserver\YmatouMQ.MessageCompensate.Server.ConsoleApp\YmatouMQ.MessageCompensate.Server.ConsoleApp.csproj", "{80AC7705-C5C7-41C8-8B63-5C8C936BD11D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.Connection", "src\YmatouMQ.Connection\YmatouMQ.Connection.csproj", "{1F6D300E-C2E4-453C-AF13-ED9DF3317DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.SubscribeAppDomain", "src\YmatouMQ.SubscribeAppDomain\YmatouMQ.SubscribeAppDomain.csproj", "{BC8CD907-3466-4FF6-AE52-E73A2E0A4B8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQMessageCompensateService", "mqserver\YmatouMQ.MessageCompensate.WinService\YmatouMQMessageCompensateService.csproj", "{A3ACC637-9D2A-4113-8920-3EDBD7AC2912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQPublishSecondaryService", "mqserver\YmatouMQPublishSecondaryService\YmatouMQPublishSecondaryService.csproj", "{A9A3DE31-5B25-4507-B799-8719950B05E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQConsumeSecondaryService", "mqconsume\YmatouMQConsumeSecondaryService\YmatouMQConsumeSecondaryService.csproj", "{F4C27388-CE70-4318-A69B-C2A3AC4A1608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.SubscribeAppDomainSingle", "src\YmatouMQ.SubscribeAppDomainSingle\YmatouMQ.SubscribeAppDomainSingle.csproj", "{5F234031-142E-424F-8AF0-78AC1B0076D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.ConfigurationSync", "src\YmatouMQ.ConfigurationSync\YmatouMQ.ConfigurationSync.csproj", "{6B47E320-E366-4992-9AF8-2099BE6366BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.ClientNet45", "src\YmatouMQ.ClientNet45\YmatouMQ.ClientNet45.csproj", "{52CBCEAE-AD6D-44B4-9606-668B427F26A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.DaemonService", "mqserver\YmatouMQ.DaemonService\YmatouMQ.DaemonService.csproj", "{185F1318-D5FE-4E8D-9C15-AC357F52F16D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQ.CompensateMessageLog", "src\YmatouMQ.CompensateMessageLog\YmatouMQ.CompensateMessageLog.csproj", "{94D49647-5374-4384-BC10-AFF5BF52B478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YmatouMQCompensateMessageLogApplication", "test\YmatouMQCompensateMessageLogApplication\YmatouMQCompensateMessageLogApplication.csproj", "{FE53B095-1737-435A-BCDA-3DD2924DE904}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 43
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://win2012-tfs01:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = test\\YmatouMQTest\\YmatouMQTest.csproj
+		SccProjectTopLevelParentUniqueName1 = YmatouMQ2.0.sln
+		SccProjectName1 = test/YmatouMQTest
+		SccLocalPath1 = test\\YmatouMQTest
+		SccProjectUniqueName2 = demo\\YamtouMQ2_0Demo\\YamtouMQ2_0Demo.csproj
+		SccProjectTopLevelParentUniqueName2 = YmatouMQ2.0.sln
+		SccProjectName2 = demo/YamtouMQ2_0Demo
+		SccLocalPath2 = demo\\YamtouMQ2_0Demo
+		SccProjectUniqueName3 = test\\YmatouMQPubllishConsoleApplication\\YmatouMQPubllishConsoleApplication.csproj
+		SccProjectTopLevelParentUniqueName3 = YmatouMQ2.0.sln
+		SccProjectName3 = test/YmatouMQPubllishConsoleApplication
+		SccLocalPath3 = test\\YmatouMQPubllishConsoleApplication
+		SccProjectUniqueName4 = test\\YmatouMQConsoleApplication\\YmatouMQSubscribeConsoleApplication.csproj
+		SccProjectTopLevelParentUniqueName4 = YmatouMQ2.0.sln
+		SccProjectName4 = test/YmatouMQConsoleApplication
+		SccLocalPath4 = test\\YmatouMQConsoleApplication
+		SccProjectUniqueName5 = performancetest\\PublishTest\\PublishTest.csproj
+		SccProjectTopLevelParentUniqueName5 = YmatouMQ2.0.sln
+		SccProjectName5 = performancetest/PublishTest
+		SccLocalPath5 = performancetest\\PublishTest
+		SccProjectUniqueName6 = test\\YmatouMQConnectionConsoleApplication\\YmatouMQConnectionConsoleApplication.csproj
+		SccProjectTopLevelParentUniqueName6 = YmatouMQ2.0.sln
+		SccProjectName6 = test/YmatouMQConnectionConsoleApplication
+		SccLocalPath6 = test\\YmatouMQConnectionConsoleApplication
+		SccProjectUniqueName7 = performancetest\\SubscribeTest\\SubscribeTest.csproj
+		SccProjectTopLevelParentUniqueName7 = YmatouMQ2.0.sln
+		SccProjectName7 = performancetest/SubscribeTest
+		SccLocalPath7 = performancetest\\SubscribeTest
+		SccProjectUniqueName8 = mqadmin\\YmatouMQAdmin.Domain\\YmatouMQAdmin.Domain.csproj
+		SccProjectTopLevelParentUniqueName8 = YmatouMQ2.0.sln
+		SccProjectName8 = mqadmin/YmatouMQAdmin.Domain
+		SccLocalPath8 = mqadmin\\YmatouMQAdmin.Domain
+		SccProjectUniqueName9 = test\\YmatouMQAdminTest\\YmatouMQAdminTest.csproj
+		SccProjectTopLevelParentUniqueName9 = YmatouMQ2.0.sln
+		SccProjectName9 = test/YmatouMQAdminTest
+		SccLocalPath9 = test\\YmatouMQAdminTest
+		SccProjectUniqueName10 = mqadmin\\YmatouMQAdmin.WebApp2\\YmatouMQAdmin.WebApp2.csproj
+		SccProjectTopLevelParentUniqueName10 = YmatouMQ2.0.sln
+		SccProjectName10 = mqadmin/YmatouMQAdmin.WebApp2
+		SccLocalPath10 = mqadmin\\YmatouMQAdmin.WebApp2
+		SccProjectUniqueName11 = test\\YmatouMQConfigurationConsoleApplication\\YmatouMQConfigurationConsoleApplication.csproj
+		SccProjectTopLevelParentUniqueName11 = YmatouMQ2.0.sln
+		SccProjectName11 = test/YmatouMQConfigurationConsoleApplication
+		SccLocalPath11 = test\\YmatouMQConfigurationConsoleApplication
+		SccProjectUniqueName12 = mqadmin\\YmatouMQAdmin.Repository2\\YmatouMQAdmin.Repository2.csproj
+		SccProjectTopLevelParentUniqueName12 = YmatouMQ2.0.sln
+		SccProjectName12 = mqadmin/YmatouMQAdmin.Repository2
+		SccLocalPath12 = mqadmin\\YmatouMQAdmin.Repository2
+		SccProjectUniqueName13 = demo\\YmqtouMQConsumeDemo.Web\\YmqtouMQConsumeDemo.Web.csproj
+		SccProjectTopLevelParentUniqueName13 = YmatouMQ2.0.sln
+		SccProjectName13 = demo/YmqtouMQConsumeDemo.Web
+		SccLocalPath13 = demo\\YmqtouMQConsumeDemo.Web
+		SccProjectUniqueName14 = mqconsume\\YmatouMQConsume.AppConsole\\YmatouMQConsume.AppConsole.csproj
+		SccProjectTopLevelParentUniqueName14 = YmatouMQ2.0.sln
+		SccProjectName14 = mqconsume/YmatouMQConsume.AppConsole
+		SccLocalPath14 = mqconsume\\YmatouMQConsume.AppConsole
+		SccProjectUniqueName15 = mqconsume\\YmatouMQConsume\\YmatouMQConsumeService.csproj
+		SccProjectTopLevelParentUniqueName15 = YmatouMQ2.0.sln
+		SccProjectName15 = mqconsume/YmatouMQConsume
+		SccLocalPath15 = mqconsume\\YmatouMQConsume
+		SccProjectUniqueName16 = performancetest\\disruptor.rabbitmq\\disruptor.rabbitmq.csproj
+		SccProjectTopLevelParentUniqueName16 = YmatouMQ2.0.sln
+		SccProjectName16 = performancetest/disruptor.rabbitmq
+		SccLocalPath16 = performancetest\\disruptor.rabbitmq
+		SccProjectUniqueName17 = performancetest\\TaskQueueTest\\TaskQueueTest.csproj
+		SccProjectTopLevelParentUniqueName17 = YmatouMQ2.0.sln
+		SccProjectName17 = performancetest/TaskQueueTest
+		SccLocalPath17 = performancetest\\TaskQueueTest
+		SccProjectUniqueName18 = test\\YmatouMQServerHost\\YmatouMQServerHost.csproj
+		SccProjectTopLevelParentUniqueName18 = YmatouMQ2.0.sln
+		SccProjectName18 = test/YmatouMQServerHost
+		SccLocalPath18 = test\\YmatouMQServerHost
+		SccProjectUniqueName19 = src\\YmatouMQClientNet4\\YmatouMQ.ClientNet4.csproj
+		SccProjectTopLevelParentUniqueName19 = YmatouMQ2.0.sln
+		SccProjectName19 = src/YmatouMQClientNet4
+		SccLocalPath19 = src\\YmatouMQClientNet4
+		SccProjectUniqueName20 = src\\YmatouMQSubscribe\\YmatouMQ.Subscribe.csproj
+		SccProjectTopLevelParentUniqueName20 = YmatouMQ2.0.sln
+		SccProjectName20 = src/YmatouMQSubscribe
+		SccLocalPath20 = src\\YmatouMQSubscribe
+		SccProjectUniqueName21 = src\\YmatouMQ.Log\\YmatouMQ.Log.csproj
+		SccProjectTopLevelParentUniqueName21 = YmatouMQ2.0.sln
+		SccProjectName21 = src/YmatouMQ.Log
+		SccLocalPath21 = src\\YmatouMQ.Log
+		SccProjectUniqueName22 = mqserver\\YmatouMQServerConsoleApp\\YmatouMQ.Server.ConsoleApp.csproj
+		SccProjectTopLevelParentUniqueName22 = YmatouMQ2.0.sln
+		SccProjectName22 = mqserver/YmatouMQServerConsoleApp
+		SccLocalPath22 = mqserver\\YmatouMQServerConsoleApp
+		SccProjectUniqueName23 = test\\YmatouMQ.MessageCompensateTest\\YmatouMQ.MessageCompensateTest.csproj
+		SccProjectTopLevelParentUniqueName23 = YmatouMQ2.0.sln
+		SccProjectName23 = test/YmatouMQ.MessageCompensateTest
+		SccLocalPath23 = test\\YmatouMQ.MessageCompensateTest
+		SccProjectUniqueName24 = src\\YmatouMQ.Configuration\\YmatouMQ.Configuration.csproj
+		SccProjectTopLevelParentUniqueName24 = YmatouMQ2.0.sln
+		SccProjectName24 = src/YmatouMQ.Configuration
+		SccLocalPath24 = src\\YmatouMQ.Configuration
+		SccProjectUniqueName25 = src\\YmatouMQ.Core\\YmatouMQ.Publish.csproj
+		SccProjectTopLevelParentUniqueName25 = YmatouMQ2.0.sln
+		SccProjectName25 = src/YmatouMQ.Core
+		SccLocalPath25 = src\\YmatouMQ.Core
+		SccProjectUniqueName26 = mqserver\\YmatouMQ.MessageCompensate.Server.ConsoleApp\\YmatouMQ.MessageCompensate.Server.ConsoleApp.csproj
+		SccProjectTopLevelParentUniqueName26 = YmatouMQ2.0.sln
+		SccProjectName26 = mqserver/YmatouMQ.MessageCompensate.Server.ConsoleApp
+		SccLocalPath26 = mqserver\\YmatouMQ.MessageCompensate.Server.ConsoleApp
+		SccProjectUniqueName27 = src\\YmatouMQ.MessageCompensate\\YmatouMQ.MessageCompensateService.csproj
+		SccProjectTopLevelParentUniqueName27 = YmatouMQ2.0.sln
+		SccProjectName27 = src/YmatouMQ.MessageCompensate
+		SccLocalPath27 = src\\YmatouMQ.MessageCompensate
+		SccProjectUniqueName28 = src\\YmatouMQMessageHandlerScheduler\\YmatouMQ.MessageScheduler.csproj
+		SccProjectTopLevelParentUniqueName28 = YmatouMQ2.0.sln
+		SccProjectName28 = src/YmatouMQMessageHandlerScheduler
+		SccLocalPath28 = src\\YmatouMQMessageHandlerScheduler
+		SccProjectUniqueName29 = src\\YmatouMQ.Connection\\YmatouMQ.Connection.csproj
+		SccProjectTopLevelParentUniqueName29 = YmatouMQ2.0.sln
+		SccProjectName29 = src/YmatouMQ.Connection
+		SccLocalPath29 = src\\YmatouMQ.Connection
+		SccProjectUniqueName30 = src\\YmatouMQ.SubscribeAppDomain\\YmatouMQ.SubscribeAppDomain.csproj
+		SccProjectTopLevelParentUniqueName30 = YmatouMQ2.0.sln
+		SccProjectName30 = src/YmatouMQ.SubscribeAppDomain
+		SccLocalPath30 = src\\YmatouMQ.SubscribeAppDomain
+		SccProjectUniqueName31 = src\\YmatouMQ.Common\\YmatouMQ.Common.csproj
+		SccProjectTopLevelParentUniqueName31 = YmatouMQ2.0.sln
+		SccProjectName31 = src/YmatouMQ.Common
+		SccLocalPath31 = src\\YmatouMQ.Common
+		SccProjectUniqueName32 = src\\YmatouMQMessageMongodb\\YmatouMQ.MessageMongodb.csproj
+		SccProjectTopLevelParentUniqueName32 = YmatouMQ2.0.sln
+		SccProjectName32 = src/YmatouMQMessageMongodb
+		SccLocalPath32 = src\\YmatouMQMessageMongodb
+		SccProjectUniqueName33 = mqserver\\YmatouMQServerWinService\\YmatouMQPublishService.csproj
+		SccProjectTopLevelParentUniqueName33 = YmatouMQ2.0.sln
+		SccProjectName33 = mqserver/YmatouMQServerWinService
+		SccLocalPath33 = mqserver\\YmatouMQServerWinService
+		SccProjectUniqueName34 = mqserver\\YmatouMQ.MessageCompensate.WinService\\YmatouMQMessageCompensateService.csproj
+		SccProjectTopLevelParentUniqueName34 = YmatouMQ2.0.sln
+		SccProjectName34 = mqserver/YmatouMQ.MessageCompensate.WinService
+		SccLocalPath34 = mqserver\\YmatouMQ.MessageCompensate.WinService
+		SccProjectUniqueName35 = mqserver\\YmatouMQPublishSecondaryService\\YmatouMQPublishSecondaryService.csproj
+		SccProjectTopLevelParentUniqueName35 = YmatouMQ2.0.sln
+		SccProjectName35 = mqserver/YmatouMQPublishSecondaryService
+		SccLocalPath35 = mqserver\\YmatouMQPublishSecondaryService
+		SccProjectUniqueName36 = mqconsume\\YmatouMQConsumeSecondaryService\\YmatouMQConsumeSecondaryService.csproj
+		SccProjectTopLevelParentUniqueName36 = YmatouMQ2.0.sln
+		SccProjectName36 = mqconsume/YmatouMQConsumeSecondaryService
+		SccLocalPath36 = mqconsume\\YmatouMQConsumeSecondaryService
+		SccProjectUniqueName37 = src\\YmatouMQ.SubscribeAppDomainSingle\\YmatouMQ.SubscribeAppDomainSingle.csproj
+		SccProjectTopLevelParentUniqueName37 = YmatouMQ2.0.sln
+		SccProjectName37 = src/YmatouMQ.SubscribeAppDomainSingle
+		SccLocalPath37 = src\\YmatouMQ.SubscribeAppDomainSingle
+		SccProjectUniqueName38 = src\\YmatouMQ.ConfigurationSync\\YmatouMQ.ConfigurationSync.csproj
+		SccProjectTopLevelParentUniqueName38 = YmatouMQ2.0.sln
+		SccProjectName38 = src/YmatouMQ.ConfigurationSync
+		SccLocalPath38 = src\\YmatouMQ.ConfigurationSync
+		SccProjectUniqueName39 = src\\YmatouMQ.ClientNet45\\YmatouMQ.ClientNet45.csproj
+		SccProjectTopLevelParentUniqueName39 = YmatouMQ2.0.sln
+		SccProjectName39 = src/YmatouMQ.ClientNet45
+		SccLocalPath39 = src\\YmatouMQ.ClientNet45
+		SccProjectUniqueName40 = mqserver\\YmatouMQ.DaemonService\\YmatouMQ.DaemonService.csproj
+		SccProjectTopLevelParentUniqueName40 = YmatouMQ2.0.sln
+		SccProjectName40 = mqserver/YmatouMQ.DaemonService
+		SccLocalPath40 = mqserver\\YmatouMQ.DaemonService
+		SccProjectUniqueName41 = src\\YmatouMQ.CompensateMessageLog\\YmatouMQ.CompensateMessageLog.csproj
+		SccProjectTopLevelParentUniqueName41 = YmatouMQ2.0.sln
+		SccProjectName41 = src/YmatouMQ.CompensateMessageLog
+		SccLocalPath41 = src\\YmatouMQ.CompensateMessageLog
+		SccProjectUniqueName42 = test\\YmatouMQCompensateMessageLogApplication\\YmatouMQCompensateMessageLogApplication.csproj
+		SccProjectTopLevelParentUniqueName42 = YmatouMQ2.0.sln
+		SccProjectName42 = test/YmatouMQCompensateMessageLogApplication
+		SccLocalPath42 = test\\YmatouMQCompensateMessageLogApplication
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDDBE334-D0DE-4E07-A772-6261CC47AF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDDBE334-D0DE-4E07-A772-6261CC47AF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDDBE334-D0DE-4E07-A772-6261CC47AF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDDBE334-D0DE-4E07-A772-6261CC47AF01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A46838C-8377-42E4-A7E3-00C491F04E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A46838C-8377-42E4-A7E3-00C491F04E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A46838C-8377-42E4-A7E3-00C491F04E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A46838C-8377-42E4-A7E3-00C491F04E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6136B47-0C38-4FE4-98CB-41A4C6AA249C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6136B47-0C38-4FE4-98CB-41A4C6AA249C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6136B47-0C38-4FE4-98CB-41A4C6AA249C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6136B47-0C38-4FE4-98CB-41A4C6AA249C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7938CF52-15C8-4669-AB30-3A396F250193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7938CF52-15C8-4669-AB30-3A396F250193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7938CF52-15C8-4669-AB30-3A396F250193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7938CF52-15C8-4669-AB30-3A396F250193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{781D5D62-59EF-4785-99A3-8BB9B8AB10B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{781D5D62-59EF-4785-99A3-8BB9B8AB10B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{781D5D62-59EF-4785-99A3-8BB9B8AB10B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{781D5D62-59EF-4785-99A3-8BB9B8AB10B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27B5954-A204-44F7-9939-3A0F3CE123BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27B5954-A204-44F7-9939-3A0F3CE123BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27B5954-A204-44F7-9939-3A0F3CE123BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27B5954-A204-44F7-9939-3A0F3CE123BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65373B79-1C4E-403D-9B93-EA138563A198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65373B79-1C4E-403D-9B93-EA138563A198}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65373B79-1C4E-403D-9B93-EA138563A198}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65373B79-1C4E-403D-9B93-EA138563A198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274E8944-7C3F-4CD5-8D72-6D45362A2DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274E8944-7C3F-4CD5-8D72-6D45362A2DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274E8944-7C3F-4CD5-8D72-6D45362A2DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274E8944-7C3F-4CD5-8D72-6D45362A2DC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA33E64-672E-4C5F-B02D-4A560CF6865D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA33E64-672E-4C5F-B02D-4A560CF6865D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA33E64-672E-4C5F-B02D-4A560CF6865D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA33E64-672E-4C5F-B02D-4A560CF6865D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDCECA0A-CD33-4D79-9B94-7B33691C17A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDCECA0A-CD33-4D79-9B94-7B33691C17A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDCECA0A-CD33-4D79-9B94-7B33691C17A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDCECA0A-CD33-4D79-9B94-7B33691C17A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01280F80-9503-46F0-A67C-31A6940E5684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01280F80-9503-46F0-A67C-31A6940E5684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01280F80-9503-46F0-A67C-31A6940E5684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01280F80-9503-46F0-A67C-31A6940E5684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{257C7085-F365-40DF-A89C-FA914B59FE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{257C7085-F365-40DF-A89C-FA914B59FE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{257C7085-F365-40DF-A89C-FA914B59FE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{257C7085-F365-40DF-A89C-FA914B59FE71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{715EFA16-C970-40BF-A6E4-212A2BC9E795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715EFA16-C970-40BF-A6E4-212A2BC9E795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715EFA16-C970-40BF-A6E4-212A2BC9E795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715EFA16-C970-40BF-A6E4-212A2BC9E795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72E5E5C7-68F1-4C61-BBB1-2F3D48C6618D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E5E5C7-68F1-4C61-BBB1-2F3D48C6618D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E5E5C7-68F1-4C61-BBB1-2F3D48C6618D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E5E5C7-68F1-4C61-BBB1-2F3D48C6618D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292FDB23-1875-4A68-BB14-8E9364EACE38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292FDB23-1875-4A68-BB14-8E9364EACE38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292FDB23-1875-4A68-BB14-8E9364EACE38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292FDB23-1875-4A68-BB14-8E9364EACE38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3124AFF0-C90B-42EB-8A17-39547B8E9E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3124AFF0-C90B-42EB-8A17-39547B8E9E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3124AFF0-C90B-42EB-8A17-39547B8E9E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3124AFF0-C90B-42EB-8A17-39547B8E9E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CCBE840-2B24-4CC1-9190-347189607030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CCBE840-2B24-4CC1-9190-347189607030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CCBE840-2B24-4CC1-9190-347189607030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CCBE840-2B24-4CC1-9190-347189607030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD6703AD-DA5C-42CD-B423-CB930991551C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6703AD-DA5C-42CD-B423-CB930991551C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6703AD-DA5C-42CD-B423-CB930991551C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6703AD-DA5C-42CD-B423-CB930991551C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84B199F4-F12A-402C-A8C2-1F58E52B2035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84B199F4-F12A-402C-A8C2-1F58E52B2035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84B199F4-F12A-402C-A8C2-1F58E52B2035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84B199F4-F12A-402C-A8C2-1F58E52B2035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8A6AD7-CC56-41C7-83BA-9B27104ECC0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8A6AD7-CC56-41C7-83BA-9B27104ECC0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8A6AD7-CC56-41C7-83BA-9B27104ECC0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8A6AD7-CC56-41C7-83BA-9B27104ECC0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8729CB6F-F1E1-4988-9704-BD3ABF781712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8729CB6F-F1E1-4988-9704-BD3ABF781712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8729CB6F-F1E1-4988-9704-BD3ABF781712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8729CB6F-F1E1-4988-9704-BD3ABF781712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D89A2FF-D611-46C4-A49F-AB8748E65B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D89A2FF-D611-46C4-A49F-AB8748E65B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D89A2FF-D611-46C4-A49F-AB8748E65B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D89A2FF-D611-46C4-A49F-AB8748E65B67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC029B8-E25C-4ADB-913B-895CAC500BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC029B8-E25C-4ADB-913B-895CAC500BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC029B8-E25C-4ADB-913B-895CAC500BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC029B8-E25C-4ADB-913B-895CAC500BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8014E3FE-942F-4FC8-A1E7-E01DED8DA995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8014E3FE-942F-4FC8-A1E7-E01DED8DA995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8014E3FE-942F-4FC8-A1E7-E01DED8DA995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8014E3FE-942F-4FC8-A1E7-E01DED8DA995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE7972E-67C9-4459-8165-2EFCA8DF5D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE7972E-67C9-4459-8165-2EFCA8DF5D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE7972E-67C9-4459-8165-2EFCA8DF5D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE7972E-67C9-4459-8165-2EFCA8DF5D52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8040A5D8-1087-4DC1-A7D0-3CA3DA79B762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8040A5D8-1087-4DC1-A7D0-3CA3DA79B762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8040A5D8-1087-4DC1-A7D0-3CA3DA79B762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8040A5D8-1087-4DC1-A7D0-3CA3DA79B762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFFFAA58-248C-4719-BCD3-30DFD76664E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFFAA58-248C-4719-BCD3-30DFD76664E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFFAA58-248C-4719-BCD3-30DFD76664E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFFAA58-248C-4719-BCD3-30DFD76664E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA7E6B3-73C1-4A65-8825-DC24CE82461E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA7E6B3-73C1-4A65-8825-DC24CE82461E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA7E6B3-73C1-4A65-8825-DC24CE82461E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA7E6B3-73C1-4A65-8825-DC24CE82461E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E08F30-807A-44C2-A337-25E1403DB3F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E08F30-807A-44C2-A337-25E1403DB3F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E08F30-807A-44C2-A337-25E1403DB3F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E08F30-807A-44C2-A337-25E1403DB3F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E1FD70E-5017-44A7-B260-A29E35BA4993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E1FD70E-5017-44A7-B260-A29E35BA4993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E1FD70E-5017-44A7-B260-A29E35BA4993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E1FD70E-5017-44A7-B260-A29E35BA4993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80AC7705-C5C7-41C8-8B63-5C8C936BD11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80AC7705-C5C7-41C8-8B63-5C8C936BD11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80AC7705-C5C7-41C8-8B63-5C8C936BD11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80AC7705-C5C7-41C8-8B63-5C8C936BD11D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6D300E-C2E4-453C-AF13-ED9DF3317DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6D300E-C2E4-453C-AF13-ED9DF3317DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6D300E-C2E4-453C-AF13-ED9DF3317DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6D300E-C2E4-453C-AF13-ED9DF3317DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC8CD907-3466-4FF6-AE52-E73A2E0A4B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC8CD907-3466-4FF6-AE52-E73A2E0A4B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC8CD907-3466-4FF6-AE52-E73A2E0A4B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC8CD907-3466-4FF6-AE52-E73A2E0A4B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3ACC637-9D2A-4113-8920-3EDBD7AC2912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3ACC637-9D2A-4113-8920-3EDBD7AC2912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3ACC637-9D2A-4113-8920-3EDBD7AC2912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3ACC637-9D2A-4113-8920-3EDBD7AC2912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9A3DE31-5B25-4507-B799-8719950B05E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9A3DE31-5B25-4507-B799-8719950B05E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9A3DE31-5B25-4507-B799-8719950B05E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9A3DE31-5B25-4507-B799-8719950B05E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C27388-CE70-4318-A69B-C2A3AC4A1608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C27388-CE70-4318-A69B-C2A3AC4A1608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C27388-CE70-4318-A69B-C2A3AC4A1608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C27388-CE70-4318-A69B-C2A3AC4A1608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F234031-142E-424F-8AF0-78AC1B0076D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F234031-142E-424F-8AF0-78AC1B0076D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F234031-142E-424F-8AF0-78AC1B0076D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F234031-142E-424F-8AF0-78AC1B0076D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B47E320-E366-4992-9AF8-2099BE6366BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B47E320-E366-4992-9AF8-2099BE6366BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B47E320-E366-4992-9AF8-2099BE6366BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B47E320-E366-4992-9AF8-2099BE6366BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52CBCEAE-AD6D-44B4-9606-668B427F26A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52CBCEAE-AD6D-44B4-9606-668B427F26A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52CBCEAE-AD6D-44B4-9606-668B427F26A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52CBCEAE-AD6D-44B4-9606-668B427F26A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{185F1318-D5FE-4E8D-9C15-AC357F52F16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185F1318-D5FE-4E8D-9C15-AC357F52F16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185F1318-D5FE-4E8D-9C15-AC357F52F16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185F1318-D5FE-4E8D-9C15-AC357F52F16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94D49647-5374-4384-BC10-AFF5BF52B478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D49647-5374-4384-BC10-AFF5BF52B478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D49647-5374-4384-BC10-AFF5BF52B478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D49647-5374-4384-BC10-AFF5BF52B478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE53B095-1737-435A-BCDA-3DD2924DE904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE53B095-1737-435A-BCDA-3DD2924DE904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE53B095-1737-435A-BCDA-3DD2924DE904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE53B095-1737-435A-BCDA-3DD2924DE904}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDDBE334-D0DE-4E07-A772-6261CC47AF01} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{3CCBE840-2B24-4CC1-9190-347189607030} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{3AC029B8-E25C-4ADB-913B-895CAC500BB4} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{8014E3FE-942F-4FC8-A1E7-E01DED8DA995} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{3EE7972E-67C9-4459-8165-2EFCA8DF5D52} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{8040A5D8-1087-4DC1-A7D0-3CA3DA79B762} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{CFFFAA58-248C-4719-BCD3-30DFD76664E2} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{4BA7E6B3-73C1-4A65-8825-DC24CE82461E} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{7E1FD70E-5017-44A7-B260-A29E35BA4993} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{1F6D300E-C2E4-453C-AF13-ED9DF3317DE3} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{BC8CD907-3466-4FF6-AE52-E73A2E0A4B8F} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{5F234031-142E-424F-8AF0-78AC1B0076D4} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{6B47E320-E366-4992-9AF8-2099BE6366BE} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{52CBCEAE-AD6D-44B4-9606-668B427F26A6} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{94D49647-5374-4384-BC10-AFF5BF52B478} = {9A2208A2-4955-4CEB-B1D8-90109049EC8A}
+		{1A46838C-8377-42E4-A7E3-00C491F04E13} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{7938CF52-15C8-4669-AB30-3A396F250193} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{781D5D62-59EF-4785-99A3-8BB9B8AB10B9} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{43D9D2BB-A04B-4303-A03A-47BCE9A38BC3} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{65373B79-1C4E-403D-9B93-EA138563A198} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{EDCECA0A-CD33-4D79-9B94-7B33691C17A1} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{257C7085-F365-40DF-A89C-FA914B59FE71} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{1D89A2FF-D611-46C4-A49F-AB8748E65B67} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{91E08F30-807A-44C2-A337-25E1403DB3F9} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{FE53B095-1737-435A-BCDA-3DD2924DE904} = {225EF958-7324-4CCE-B101-B5E14BF3774D}
+		{C6136B47-0C38-4FE4-98CB-41A4C6AA249C} = {D120D2E3-BB9F-442A-BE3E-3B4B28F43807}
+		{292FDB23-1875-4A68-BB14-8E9364EACE38} = {D120D2E3-BB9F-442A-BE3E-3B4B28F43807}
+		{B27B5954-A204-44F7-9939-3A0F3CE123BB} = {43D9D2BB-A04B-4303-A03A-47BCE9A38BC3}
+		{274E8944-7C3F-4CD5-8D72-6D45362A2DC7} = {43D9D2BB-A04B-4303-A03A-47BCE9A38BC3}
+		{BD6703AD-DA5C-42CD-B423-CB930991551C} = {43D9D2BB-A04B-4303-A03A-47BCE9A38BC3}
+		{84B199F4-F12A-402C-A8C2-1F58E52B2035} = {43D9D2BB-A04B-4303-A03A-47BCE9A38BC3}
+		{9FA33E64-672E-4C5F-B02D-4A560CF6865D} = {42FE9CD8-8B9B-4AE1-80A5-D2CC3119695B}
+		{01280F80-9503-46F0-A67C-31A6940E5684} = {42FE9CD8-8B9B-4AE1-80A5-D2CC3119695B}
+		{715EFA16-C970-40BF-A6E4-212A2BC9E795} = {42FE9CD8-8B9B-4AE1-80A5-D2CC3119695B}
+		{FE8A6AD7-CC56-41C7-83BA-9B27104ECC0D} = {6B2E1F8E-8B29-4F0B-9329-6C18D9AE74E5}
+		{8729CB6F-F1E1-4988-9704-BD3ABF781712} = {6B2E1F8E-8B29-4F0B-9329-6C18D9AE74E5}
+		{80AC7705-C5C7-41C8-8B63-5C8C936BD11D} = {6B2E1F8E-8B29-4F0B-9329-6C18D9AE74E5}
+		{A3ACC637-9D2A-4113-8920-3EDBD7AC2912} = {6B2E1F8E-8B29-4F0B-9329-6C18D9AE74E5}
+		{A9A3DE31-5B25-4507-B799-8719950B05E6} = {6B2E1F8E-8B29-4F0B-9329-6C18D9AE74E5}
+		{185F1318-D5FE-4E8D-9C15-AC357F52F16D} = {6B2E1F8E-8B29-4F0B-9329-6C18D9AE74E5}
+		{72E5E5C7-68F1-4C61-BBB1-2F3D48C6618D} = {A0D19BE3-B20F-43A4-90A4-D68B59186422}
+		{3124AFF0-C90B-42EB-8A17-39547B8E9E21} = {A0D19BE3-B20F-43A4-90A4-D68B59186422}
+		{F4C27388-CE70-4318-A69B-C2A3AC4A1608} = {A0D19BE3-B20F-43A4-90A4-D68B59186422}
+	EndGlobalSection
+EndGlobal

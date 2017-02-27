@@ -1,0 +1,78 @@
+﻿@model YmatouMQAdmin.WebApp2.Models.UserInfo
+
+@{
+    ViewBag.Title = "创建用户";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="form-horizontal">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">创建用户</legend>
+            <div class="control-group">
+                <label for="username" class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-10">
+                    <input type="text" id="username" name="username" class="form-control" />
+                    <p></p>
+                </div>
+                <label for="password" class="col-sm-2 control-label">登陆密码</label>
+                <div class="col-sm-10">
+                    <input type="password" id="password" name="password" class="form-control" />
+                    <p></p>
+                </div>
+                <label for="Roles" class="col-sm-2 control-label">拥有权限</label>
+                <div class="col-sm-10 checkbox" style="text-align:left">
+                    @foreach (var role in ViewBag.roleString as Dictionary<string, string>)
+                    {
+                        <label> <input type="checkbox" name="Roles" id="Roles" value="@role.Key" />@role.Value   </label>
+                    }
+                    <p></p>
+                </div>
+            </div>
+            <p></p>
+            <div id="button">
+                <input type="submit" value="创建用户" id="save" class="btn btn-primary" /> @Html.ActionLink("返回", "UserList", null, new { @class = "btn btn-warning" })              
+            </div>
+        </fieldset>
+    </div>   
+</div>
+<script type="text/javascript">
+    $(function () {
+
+        $("#save").click(function () {
+
+            var username = $("#username").val();
+            var pwd = $("#password").val();
+            var roleList = [];
+
+            $("input:checkbox").each(function () {
+                if ($(this).is(":checked")) {
+                    roleList.push($(this).val());
+                }
+            })
+
+            $.post("/LogOn/Validate?username=" + username, function (d) {
+                if (d.success) {
+                    $.post("/LogOn/SaveRole?username=" + username + "&password=" + pwd + "&roleList=" + roleList, function (data) {
+                        if (data.success) {
+                            //$("#opresult").addClass("text-info");
+                            //$("#opresult").html("<small>添加成功</small>");
+                            busalert("添加成功");
+                        }
+                        else {
+                            //$("#opresult").addClass("text-error");
+                            //$("#opresult").html("<small>" + data.msg + "</small>");
+                            busalert(data.msg);
+                        }
+                    })
+                }
+                else {
+                    //$("#opresult").addClass("text-error");
+                    //$("#opresult").html("<small>" + data.msg + "</small>");
+                    busalert(data.msg);
+                }
+            })
+
+        })
+    })
+</script>

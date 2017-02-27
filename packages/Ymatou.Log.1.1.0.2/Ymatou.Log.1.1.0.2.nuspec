@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Ymatou.Log</id>
+    <version>1.1.0.2</version>
+    <title>Ymatou.Log</title>
+    <authors>Ymatou</authors>
+    <owners>Ymatou</owners>
+    <licenseUrl>http://license_url_here_or_delete_this_line/</licenseUrl>
+    <projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>
+    <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>洋码头日志组件,增加错误告警,增加日志开启时的服务器通知</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <tags>Tag1 Tag2</tags>
+    <dependencies>
+      <dependency id="log4net" version="2.0.3" />
+    </dependencies>
+  </metadata>
+</package>

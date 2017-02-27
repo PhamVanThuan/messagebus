@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "op";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["message"] != null)
+{
+    <div class="container" >
+        <div class="alert alert-success">
+            <h3><b>  @TempData["message"].ToString() </b></h3>
+        </div>
+        <a href="javascript: history.back();" onclick="javascript: history.back();"><< 返回</a>
+    </div>
+    <p></p>
+}

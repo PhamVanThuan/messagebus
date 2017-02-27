@@ -1,0 +1,4 @@
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqadmin\YmatouMQAdmin.AppService\bin\Debug\YmatouMQAdmin.AppService.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqadmin\YmatouMQAdmin.AppService\bin\Debug\YmatouMQAdmin.AppService.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqadmin\YmatouMQAdmin.AppService\obj\Debug\YmatouMQAdmin.AppService.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\mqadmin\YmatouMQAdmin.AppService\obj\Debug\YmatouMQAdmin.AppService.pdb

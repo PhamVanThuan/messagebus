@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "回调业务配置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @using (Html.BeginForm("EditCallbackConfiguration", "AdminMQ", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">根据应用ID，业务场景修改回调业务配置</legend>
+
+            <div id="mainDiv" class="form-group">
+
+                <label for="AppId">AppID</label>
+                <select id="appId" name="appId" class="selectpicker form-control" data-style="btn-primary">
+                    <option value="default">请选择应用ID</option>
+                    @foreach (var v in TempData["AppList"] as List<string>)
+                    {
+                        <option value="@v">@v</option>
+                    }
+                </select>
+
+                <div id="query" class="form-group" style="display:none">
+                    <label for="code">Code</label>
+                    <select id="code" name="code" class="selectpicker form-control" data-style="btn-info"></select>
+
+                    <div id="button">
+
+                        <input type="submit" value="编辑" id="editbtn" class="btn btn-primary" />
+                    </div>
+                </div>
+
+            </div>
+            <p></p>
+        </fieldset>
+    }
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#editbtn").click(function () {
+            if ($("#appId").val() == "default" || $("#code").val() == null) {
+                busalert("请选择AppId和Code");
+                return false;
+            }
+        });
+
+        var div = $("#mainDiv");
+        $("#appId").change(function () {
+            var _appId = $("#appId").val();
+
+            $("#code").empty();
+
+            $.post("/AdminMQ/AppSearch?appId=" + _appId, function (data) {
+
+                if (data.success) {
+                    $.each(data.codeList, function (i, item) {
+                        $("<option></option>").val(item["Value"]).text(item["Text"]).appendTo($("#code"))
+                    })
+
+                    if (data.count == 0) {
+                        div.find("#CreateCodePanel").css('display', 'inline');
+                        div.find("#button").css('display', 'none');
+                    }
+                    else {
+                        div.find("#CreateCodePanel").css('display', 'none');
+                        div.find("#button").css('display', 'inline');
+                    }
+
+                    div.find("#query").css('display', 'inline');
+                }
+            })
+        })
+    })
+
+</script>
+
+
+
+
+

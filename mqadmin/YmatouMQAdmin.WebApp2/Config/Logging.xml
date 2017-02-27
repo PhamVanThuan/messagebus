@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<userInfo>
+  <user>
+    <username>Admin</username>
+    <password>QWRtaW4xMjM=</password>
+    <role>AppDefault|AppGlobal|CallBackIndex|Index|CreateApp|AppdomainList|CreateCode|TestMessage|AppCodeList|MessageStatusSearch|RetryMessage|UserList</role>
+  </user>
+  <user>
+    <username>guest</username>
+    <password>MTIzNDU2</password>
+    <role>AppDefault|Index</role>
+  </user>
+  <user>
+    <username>ghu</username>
+    <password>MTIz</password>
+    <role>AppDefault|AppGlobal</role>
+  </user>
+</userInfo>

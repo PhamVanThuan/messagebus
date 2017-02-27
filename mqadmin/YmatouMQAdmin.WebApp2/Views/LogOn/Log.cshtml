@@ -1,0 +1,89 @@
+﻿@model YmatouMQAdmin.WebApp2.Models.UserInfo
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消息总线后台管理</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <style>
+        .col-center-block {
+            float: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $('#loginModal').modal('hide').css({
+                'margin-top': function () {
+                    var modalHeight = $('#loginModal').find('.modal-dialog').height();
+                    return ($(window).height() - modalHeight) / 2;
+                }
+            });
+        });
+    </script>
+  
+</head>
+<body style=" background: #EEEEEE; opacity: 0.8; ">
+    <div id="loginModal" class="modal show">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="~/Images/ymt.gif" style="height:60px;width:500px" />
+                    <h1 class="text-center text-primary">消息总线管理后台</h1>
+
+                    <div class="modal-body">
+                        <div class="col-md-12">
+                            <section id="loginForm">
+                                @using (Html.BeginForm("Log", "LogOn", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post
+                                    , new { @class = "form-horizontal", id = "_loginform", role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true)
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.username, new { @class = "col-md-3 control-label" })
+                                        <div class="col-md-9">                                           
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="username" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(m => m.password, new { @class = "col-md-3 control-label" })
+                                        <div class="col-md-9">                                           
+                                            <input type="password" data-minlength="6" class="form-control" id="password" name="password" placeholder="Password" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <input type="submit" id="loginbtn" value="登录" class="btn btn-primary btn-lg btn-block" />
+                                        </div>
+                                    </div>
+                                }
+                            </section>
+                            @{
+                                if (TempData["msg"] != null)
+                                {
+                                    <div class="alert alert-danger" role="alert">@TempData["msg"].ToString()</div>
+                                }
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

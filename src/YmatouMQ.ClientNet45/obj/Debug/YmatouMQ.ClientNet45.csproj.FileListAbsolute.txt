@@ -1,0 +1,10 @@
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\bin\Debug\YmatouMQ.ClientNet45.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\bin\Debug\YmatouMQ.ClientNet45.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\obj\Debug\YmatouMQ.ClientNet45.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\obj\Debug\YmatouMQ.ClientNet45.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\bin\Debug\log4net.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\bin\Debug\Ymatou.Log.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\bin\Debug\log4net.xml
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\bin\Debug\Newtonsoft.Json.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\bin\Debug\Newtonsoft.Json.xml
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQ.ClientNet45\obj\Debug\YmatouMQ.ClientNet45.csprojResolveAssemblyReference.cache

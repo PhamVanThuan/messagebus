@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>LimitsMiddleware.OwinAppBuilder</id>
+    <version>3.0.0</version>
+    <title>Limits Middleware AppBuilder Integration</title>
+    <authors>Damian Hickey</authors>
+    <owners>Damian Hickey</owners>
+    <licenseUrl>https://github.com/damianh/LimitsMiddleware/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/damianh/LimitsMiddleware</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Integration package for the Limits middleware for users of IAppBuilder.</description>
+    <releaseNotes>New Limits - Minimum response delay and maximum global bandwidth.</releaseNotes>
+    <tags>owin middleware throttling limits</tags>
+    <dependencies>
+      <dependency id="LimitsMiddleware" version="[3.0, 4.0)" />
+      <dependency id="Owin" version="[1.0, 2.0)" />
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,6 @@
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\YmatouMQOldTest\bin\Debug\YmatouMQOldTest.exe.config
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\YmatouMQOldTest\bin\Debug\YmatouMQOldTest.exe
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\YmatouMQOldTest\bin\Debug\YmatouMQOldTest.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\YmatouMQOldTest\obj\Debug\YmatouMQOldTest.csprojResolveAssemblyReference.cache
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\YmatouMQOldTest\obj\Debug\YmatouMQOldTest.exe
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\performancetest\YmatouMQOldTest\obj\Debug\YmatouMQOldTest.pdb

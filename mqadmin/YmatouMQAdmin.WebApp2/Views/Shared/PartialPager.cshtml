@@ -1,0 +1,205 @@
+﻿@using Ymatou.CommonService
+
+@model Ymatou.CommonService.PagerInfoEx
+@{
+    PagerInfoEx pagerInfo = this.Model;
+    pagerInfo.ShowGo = true;
+}
+@{
+    //首页
+    /*
+    if (pagerInfo.IsFirst)
+    {	
+
+    <span class="AtStart">首页</span>
+
+    }
+    else
+    {
+
+    <a class="Prev" href="@pagerInfo.UrlToFirst">首页 </a>
+
+    }//end 首页
+    */
+}
+	<div class="c-pagination">
+	    <ul class="pagination-page">
+            @{
+                //上一页
+                if (pagerInfo.HasPrev)
+                {	
+                    <li><a href="@pagerInfo.UrlToPrev"><</a></li>
+
+                }
+                else
+                {
+                    <li><a class="disabled"><</a></li>
+
+                }//end 上一页
+                
+                if (pagerInfo.NeedOutter)
+                {
+
+                    for (int i = 1; i <= pagerInfo.OutterPrevEnd; i++)
+                    {
+
+                        if (i == pagerInfo.PageIndex)
+                        {
+                            <li><a class="active">@i</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@pagerInfo.GetPageUrl(i)">@i</a></li>
+                        }
+
+
+                    } //end for
+                    //outter prev
+                    if (pagerInfo.HasOutterPrev)
+                    {	
+                         <li><a class="disabled">...</a></li>
+                    }
+
+                    //inner prev prev
+                    for (int i = pagerInfo.InnerPrevPrevBegin; i <= pagerInfo.InnerPrevLastEnd; i++)
+                    {
+
+                        if (i == pagerInfo.PageIndex)
+                        {
+                            <li><a class="active">@i</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@pagerInfo.GetPageUrl(i)">@i</a></li>
+
+                        }
+
+
+                    } //end for
+
+                    //inner 
+                    for (int i = pagerInfo.InnerLastBegin; i <= pagerInfo.InnerLastEnd; i++)
+                    {
+                        if (i == pagerInfo.PageIndex)
+                        {
+                            <li><a class="active">@i</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@pagerInfo.GetPageUrl(i)">@i</a></li>
+                        }
+
+                    }
+                    if (pagerInfo.HasOutterLast)
+                    {	
+                        <li>...</li>
+                    }
+
+
+                    for (int i = pagerInfo.OutterLastBegin; i <= pagerInfo.OutterLastEnd; i++)
+                    {
+                        if (i == pagerInfo.PageIndex)
+                        {
+                            <li><a class="active">@i</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@pagerInfo.GetPageUrl(i)">@i</a></li>
+                        }
+
+                    } //end for
+
+
+                }
+                else
+                {
+                    //without outter
+                    for (int i = 1; i <= pagerInfo.PageCount; i++)
+                    {
+                        if (i == pagerInfo.PageIndex)
+                        {
+                            <li><a class="active">@i</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@pagerInfo.GetPageUrl(i)">@i</a></li>
+
+                        }
+
+                    }//end for
+
+                }
+                
+                
+                //下一页
+		        if (pagerInfo.HasNext)
+                {	
+                     <li><a href="@pagerInfo.UrlToNext">></a></li>
+                }
+                else
+                {
+                     <li><a class="disabled">></a></li>
+                }
+            }
+	    </ul>
+        @if (pagerInfo.ShowGo)
+        {	
+            <div class="pagination-form">
+               
+                    <label>到第</label><input class="pageNo" name="pageNo" id="pageNo"><label>页</label>
+                    <button class="forward" id="forward">前往</button>
+             
+	        </div>
+
+        }
+    </div>
+<script type="text/javascript">
+    $(function () {
+
+      var unescapeHTML= function(a){
+            a = "" + a;
+            return a.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+        }
+
+        $("#forward").click(function () {
+            var i = $("#pageNo").val();
+            var currentUrl = unescapeHTML("@pagerInfo.CurrentUrl");
+            var RegExp = /&p=(\d+)/g;
+            if (RegExp.test(currentUrl))
+            {
+                //alert("macth:" + currentUrl.match(RegExp));
+
+                //alert("replace:" + currentUrl.replace(currentUrl.match(RegExp), ""))
+
+                currentUrl = currentUrl.replace(currentUrl.match(RegExp), "");
+
+              //  currentUrl += "p=" + i;
+            }
+            //if (currentUrl.indexOf("&p"))
+            //{
+            //    currentUrl = currentUrl.substring(0, currentUrl.length - currentUrl.lastIndexOf("="));
+            //    currentUrl += 1;
+            //}
+            //else {
+                currentUrl += "&p=" + i;
+           // }
+                
+            //alert(currentUrl);
+            location.href = currentUrl;
+            
+        })
+    })
+</script>
+@{
+    /*
+    if (pagerInfo.IsLast)
+    {	
+       // <span class="AtEnd">末页</span>
+
+    }
+    else
+    {
+      //  <a class="Next" href="@pagerInfo.UrlToLast">末页</a>
+
+    }*/
+}

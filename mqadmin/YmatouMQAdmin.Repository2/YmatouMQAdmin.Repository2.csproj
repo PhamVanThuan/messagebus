@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{715EFA16-C970-40BF-A6E4-212A2BC9E795}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YmatouMQAdmin.Repository</RootNamespace>
+    <AssemblyName>YmatouMQAdmin.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Bson.2.2.4\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Driver.2.2.4\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Driver.Core.2.2.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.2.2.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ymatou.Log, Version=1.1.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ymatou.Log.1.1.0.5\lib\net40\Ymatou.Log.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="YmtSystem.Domain.IMongodb">
+      <HintPath>..\..\lib\YmtSystem.Domain.IMongodb.dll</HintPath>
+    </Reference>
+    <Reference Include="YmtSystem.Repository.Mongodb">
+      <HintPath>..\..\lib\YmtSystem.Repository.Mongodb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionPAndSConfigureationRepository.cs" />
+    <Compile Include="Context\ConnectionPAndSConfigureationContext.cs" />
+    <Compile Include="Context\MQConfigurationContext.cs" />
+    <Compile Include="Context\MQMessageContext.cs" />
+    <Compile Include="Context\MQSystemConfigurationContext.cs" />
+    <Compile Include="Mapping\ConnectionPAndSConfigureationMapping.cs" />
+    <Compile Include="Mapping\MQAppdomainConfigurationMapping.cs" />
+    <Compile Include="Mapping\MQConfigurationMapping.cs" />
+    <Compile Include="Mapping\MQMessageMapping.cs" />
+    <Compile Include="Mapping\MQSystemConfigurationMapping.cs" />
+    <Compile Include="MessageStatusRepository.cs" />
+    <Compile Include="MQAppdomainConfigurationRepository.cs" />
+    <Compile Include="MQConfigurationRepository.cs" />
+    <Compile Include="MQMessageRepository.cs" />
+    <Compile Include="MQSystemConfigurationRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\YmatouMQ.Configuration\YmatouMQ.Configuration.csproj">
+      <Project>{7e1fd70e-5017-44a7-b260-a29e35ba4993}</Project>
+      <Name>YmatouMQ.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YmatouMQAdmin.Domain\YmatouMQAdmin.Domain.csproj">
+      <Project>{9fa33e64-672e-4c5f-b02d-4a560cf6865d}</Project>
+      <Name>YmatouMQAdmin.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

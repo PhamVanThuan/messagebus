@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E1FD70E-5017-44A7-B260-A29E35BA4993}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YmatouMQNet4</RootNamespace>
+    <AssemblyName>YmatouMQ.Configuration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\AppdomainConfiguration.cs" />
+    <Compile Include="Configuration\CallbackConfiguration.cs" />
+    <Compile Include="Configuration\CfgTypeEnum.cs" />
+    <Compile Include="Configuration\ConfigurationEnum.cs" />
+    <Compile Include="Configuration\ConfigurationUri.cs" />
+    <Compile Include="Configuration\ConnectionConfigureation.cs" />
+    <Compile Include="Configuration\ConnectionPAndSConfigureation.cs" />
+    <Compile Include="Configuration\ConsumeConfiguration.cs" />
+    <Compile Include="Configuration\ExchangeConfiguration.cs" />
+    <Compile Include="Configuration\Manager\AppdomainConfigurationManager.cs" />
+    <Compile Include="Configuration\Manager\ConnectionInfo.cs" />
+    <Compile Include="Configuration\Manager\MQMainConfigurationManager.cs" />
+    <Compile Include="Configuration\Manager\_UpdateConnectionInfo.cs" />
+    <Compile Include="Configuration\MessageConfiguration.cs" />
+    <Compile Include="Configuration\MessagePropertiesConfiguration.cs" />
+    <Compile Include="Configuration\MQMainConfiguration.cs" />
+    <Compile Include="Configuration\MQSystemConfiguration.cs" />
+    <Compile Include="Configuration\PublishConfiguration.cs" />
+    <Compile Include="Configuration\QueueConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YmatouMQ.Common\YmatouMQ.Common.csproj">
+      <Project>{8040a5d8-1087-4dc1-a7d0-3ca3da79b762}</Project>
+      <Name>YmatouMQ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YmatouMQ.Log\YmatouMQ.Log.csproj">
+      <Project>{cfffaa58-248c-4719-bcd3-30dfd76664e2}</Project>
+      <Name>YmatouMQ.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

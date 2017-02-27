@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "总线回调业务异常预警管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="form-horizontal">
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">回调业务预警管理</legend>
+            <div class="control-group" id="alarmPanel">
+                <label for="AppId" class="col-sm-2 control-label">AppID</label>
+                <div class="col-sm-10">
+                    <select id="AppId" name="AppId" class="form-control">
+                        <option value="default">请选择应用ID</option>
+                        @foreach (var v in TempData["AppList"] as IEnumerable<string>)
+                        {
+                            <option value="@v">@v</option>
+                        }
+                    </select>
+                    <p></p>
+                </div>
+                <label for="Code" class="col-sm-2 control-label">Code</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="Code" name="Code"></select>
+                    <p></p>
+                </div>
+                <label for="Url" class="col-sm-2 control-label">CallbackUrl</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="Url" name="Url"></select>
+                    <p></p>
+                </div>
+                <label for="AlarmAppId" class="col-sm-2 control-label">预警AppId</label>
+                <div class="col-sm-10">
+                    <input type="text" id="AlarmAppId" class="form-control" name="AlarmAppId" />
+                    <p id="_alarmAppIdEmpty"></p>
+                </div>
+                <label for="AlarmDesc" class="col-sm-2 control-label">备注</label>
+                <div class="col-sm-10">
+                    <textarea id="AlarmDesc" class="form-control" name="AlarmDesc" rows="10" style="width:100%"></textarea>
+                    <p id="_alarmDescEmpty"></p>
+                </div>
+            </div>
+            <div id="button">
+                <input type="button" id="save" value="保存修改" class="btn btn-primary" />
+            </div>
+        </fieldset>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#save").click(function () {
+            var alarmAppid = $("#AlarmAppId").val();
+            var alarmDesc = $("#AlarmDesc").val();
+            if (alarmAppid == "" || alarmDesc == "") {
+                busalert("请填写预警AppId，简要备注说明（200个字符内）");
+                return false;
+            }
+            var callbackId = $("#Url").val();
+            var callbackUrl = $("#Url option:selected").text();
+            var requestUrl = "/AdminMQ/CallbackAlarmCfgSave?alarmAppid=" + alarmAppid + "&alarmDesc=" + encodeURIComponent(alarmDesc) + "&callbackId=" + callbackId + "&callbackUrl=" + encodeURIComponent(callbackUrl);
+            $.post(requestUrl, function (data) {
+                busalert(data.msg);
+            });
+        });
+        $("#AppId").change(function () {
+            var _appId = $("#AppId").val();
+            $("#Code").empty();
+            $("#Url").empty();
+            $("#_alarmAppIdEmpty").val("");
+            $("#_alarmDescEmpty").val("");
+            $.post("/AdminMQ/AppSearch?appId=" + _appId, function (data) {
+                if (data.success) {
+                    $("<option></option>").val("default").text("请选择Code").appendTo($("#Code"))
+                    $.each(data.codeList, function (i, item) {
+                        $("<option></option>").val(item["Value"]).text(item["Text"]).appendTo($("#Code"))
+                    })
+                    if (data.count == 0) {
+                        $("#save").attr('disabled', 'disabled');
+                    }
+                    else {
+                        $("#save").removeAttr('disabled');
+                    }
+                } else {
+                    $("#save").attr('disabled', 'disabled');
+                }
+            })
+        });
+        $("#Code").change(function () {
+            $("#_alarmAppIdEmpty").val("");
+            $("#_alarmDescEmpty").val("");
+            $("#Url").empty();
+            var _appId = $("#AppId").val();
+            var _code = $("#Code").val();
+            $.get("/AdminMQ/GetCallbackUrlList?appId=" + _appId + "&code=" + _code, function (data) {
+                if (data.success) {
+                    $("<option></option>").val("default").text("请选择URL").appendTo($("#Url"))
+                    $.each(data.urls, function (i, item) {
+                        $("<option></option>").val(item.CallbackKey).text(item.Url).appendTo($("#Url"))
+                    })
+                    if (data.count == 0) {
+                        $("#save").attr('disabled', 'disabled');
+                    }
+                    else {
+                        $("#save").removeAttr('disabled');
+                    }
+                } else {
+                    $("#save").attr('disabled', 'disabled');
+                }
+            })
+        });
+        $("#Url").change(function () {
+            $("#AlarmAppId").val("");
+            $("#AlarmDesc").val("");
+            $("#_alarmAppIdEmpty").empty();
+            $("#_alarmDescEmpty").empty();
+            var callbackId = $("#Url").val();
+            if (callbackId == "default") return false;
+            $.get("/AdminMQ/GetCallbackAlarmCfgInfo?callbackId=" + callbackId, function (data) {
+                if (data.success) {
+                    $("#_alarmAppIdEmpty").empty();
+                    $("#_alarmDescEmpty").empty();
+                    $("#AlarmAppId").val(data._data.alarmId);
+                    $("#AlarmDesc").val(data._data.desc);
+                } else {
+                    $("#AlarmAppId").val("");
+                    $("#AlarmDesc").val("");
+                    $("#_alarmAppIdEmpty").addClass("text-left help-block  text-error").html("<small>没有设置预警AppId</small>");
+                    $("#_alarmDescEmpty").addClass("text-left help-block  text-error").html("<small>没有设置预警说明</small>");
+                }
+            });
+        });
+    });
+</script>

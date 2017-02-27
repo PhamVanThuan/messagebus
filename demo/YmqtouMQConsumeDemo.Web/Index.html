@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="script/jquery-2.1.4.min.js"></script>
+    <script>
+        $(function () {
+            function sendRequest() {
+                $.get('ShowConsumeLog', function (x) {
+                    document.getElementById("info").innerHTML = x;//+ '<br>' + document.getElementById("info").innerHTML;
+
+                })
+            }
+            var t;
+            $("#start").click(function () {
+                t = window.setInterval(sendRequest, 2000);
+            });
+            $("#stop").click(function () {
+                window.clearInterval(t);
+            });
+            $("#clear").click(function ()
+            {
+                $("#info").html("");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input value="开始监听" type="button" id="start" />
+    <input value="停止监听" type="button" id="stop" />
+     <input value="清屏" type="button" id="clear" />
+    <a href="PublishMessage.html"  target="_blank" >发消息</a>
+    <div id="info" style="height: 800px; overflow-y:scroll"></div>
+</body>
+</html>

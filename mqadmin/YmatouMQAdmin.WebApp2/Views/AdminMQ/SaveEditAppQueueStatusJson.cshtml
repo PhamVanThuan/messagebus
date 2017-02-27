@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "SaveEditAppQueueStatusJson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/bundles/js/bootstrap-dialog")
+<div class="container">
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">编辑队列配置JSON</legend>
+        <div class="col-sm-10 control-group" style="width:100%">
+            <textarea id="queueString" name="queueString" class="form-control"  style="width:100%;height:600px;">@ViewBag.DomainCfg</textarea>
+            <p></p>
+        </div>
+    </fieldset>
+    <div id="button">
+        <input id="submit" type="submit" class="btn btn-primary" value="保存" role="button" />
+        @*@Html.ActionLink("《返回列表页面", "EditAppQueueStatusJson", null, new { @class = "btn btn-warning" })*@
+        <a href="javascript:history.back()" class="btn btn-warning">返回</a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#submit").click(function () {
+            var appString = $("#queueString").val();
+
+            try {
+                JSON.parse(appString);
+            }
+            catch (e) {
+                busalert("字符串格式不符合JSON格式，请检查");
+                return false;
+            }
+
+            //var FromatObj = JSON.parse(appString);
+            //var formatData =
+            //    {
+            //        AppId: FromatObj.appId,
+            //        ConnCfg: FromatObj.connCfg,
+            //        MessageCfgList: FromatObj.msgCfgs,
+            //        Version: FromatObj.version
+            //    };
+            // alert(appString);
+            var formatdata = { queueJson: appString };
+            $.ajax({
+                url: "/AdminMQ/_SaveEditAppQueueStatusJson",
+                type: "POST",
+                dataType: "json",
+                data: formatdata,
+                // data: JSON.stringify(formatData),
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                success: function (data) {
+                    if (data.success) {
+                        busalert("保存成功");
+                    }
+                    else {
+                        busalert("保存失败");
+                    }
+                }
+
+            });
+        })
+    })
+</script>

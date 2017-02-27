@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AC029B8-E25C-4ADB-913B-895CAC500BB4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YmatouMQMessageMongodb</RootNamespace>
+    <AssemblyName>YmatouMQMessageMongodb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Bson.2.2.4\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Driver.2.2.4\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MongoDB.Driver.Core.2.2.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.2.4.26, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\mongocsharpdriver.2.2.4\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Ymatou.Log, Version=1.1.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ymatou.Log.1.1.0.5\lib\net40\Ymatou.Log.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="YmtSystem.Domain.IMongodb">
+      <HintPath>..\..\lib\YmtSystem.Domain.IMongodb.dll</HintPath>
+    </Reference>
+    <Reference Include="YmtSystem.Repository.Mongodb">
+      <HintPath>..\..\lib\YmtSystem.Repository.Mongodb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppService\AlarmAppService.cs" />
+    <Compile Include="AppService\BusPushHealthAppService.cs" />
+    <Compile Include="AppService\Configuration\MQAppConfigurationAppService.cs" />
+    <Compile Include="AppService\Configuration\MQAppDomainConfigurationAppService.cs" />
+    <Compile Include="AppService\IRetryMessageCompensateAppService.cs" />
+    <Compile Include="AppService\MessageAppService.cs" />
+    <Compile Include="AppService\MessageHandleStatusAppService_TimerBatch.cs" />
+    <Compile Include="AppService\MessagePushStatusAppService.cs" />
+    <Compile Include="AppService\RetryMessageAppService.cs" />
+    <Compile Include="AppService\MessageAppService_TimerBatch.cs" />
+    <Compile Include="AppService\RetryMessageAppService_TimerBatch.cs" />
+    <Compile Include="Domain\IRepository\Configuration\IMQAppdomainConfigurationRepository.cs" />
+    <Compile Include="Domain\IRepository\Configuration\IMQConfigurationRepository.cs" />
+    <Compile Include="Domain\IRepository\IAlarmRepository.cs" />
+    <Compile Include="Domain\IRepository\IBusPushHealthRepository.cs" />
+    <Compile Include="Domain\IRepository\IMessageStatusRepository.cs" />
+    <Compile Include="Domain\Module\Alarm.cs" />
+    <Compile Include="Domain\Module\BusPushHealth.cs" />
+    <Compile Include="Domain\IRepository\IRetryMessageRepository.cs" />
+    <Compile Include="Domain\Module\MessagePushStatus.cs" />
+    <Compile Include="Domain\Module\RetryMessage.cs" />
+    <Compile Include="Domain\Module\MessageDbCollections.cs" />
+    <Compile Include="Domain\Specifications\AlarmSpecifications.cs" />
+    <Compile Include="Domain\Specifications\MQConfigurationSpecifications.cs" />
+    <Compile Include="Domain\Specifications\RetryMessageSpecifications.cs" />
+    <Compile Include="Domain\Module\MQMessage.cs" />
+    <Compile Include="Domain\Module\MQMessageStatus.cs" />
+    <Compile Include="Domain\IRepository\IMessageRepository.cs" />
+    <Compile Include="Domain\Specifications\MQMessageSpecifications.cs" />
+    <Compile Include="Dto\MQMessageQueryDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AlarmRepository.cs" />
+    <Compile Include="Repository\BusPushHealthRepository.cs" />
+    <Compile Include="Repository\Configuration\ConnectionPAndSConfigureationRepository.cs" />
+    <Compile Include="Repository\Configuration\MQAppdomainConfigurationRepository.cs" />
+    <Compile Include="Repository\Configuration\MQConfigurationRepository.cs" />
+    <Compile Include="Repository\Context\AlarmContext.cs" />
+    <Compile Include="Repository\Context\BusPushHealthContext.cs" />
+    <Compile Include="Repository\Context\Configuration\ConnectionPAndSConfigureationContext.cs" />
+    <Compile Include="Repository\Context\Configuration\MQConfigurationContext.cs" />
+    <Compile Include="Repository\Context\RetryMessageContext.cs" />
+    <Compile Include="Repository\Context\MQMessageContext.cs" />
+    <Compile Include="Repository\Mapping\AlarmMapping.cs" />
+    <Compile Include="Repository\Mapping\BusPushHealthMapping.cs" />
+    <Compile Include="Repository\Mapping\Configuration\ConnectionPAndSConfigureationMapping.cs" />
+    <Compile Include="Repository\Mapping\Configuration\MQAppdomainConfigurationMapping.cs" />
+    <Compile Include="Repository\Mapping\Configuration\MQConfigurationMapping.cs" />
+    <Compile Include="Repository\Mapping\RetryMessageMapping.cs" />
+    <Compile Include="Repository\Mapping\MQMessageMapping.cs" />
+    <Compile Include="Repository\RetryMessageRepository.cs" />
+    <Compile Include="Repository\MQMessageStatusRepository.cs" />
+    <Compile Include="Repository\MQMessageRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YmatouMQ.Common\YmatouMQ.Common.csproj">
+      <Project>{8040a5d8-1087-4dc1-a7d0-3ca3da79b762}</Project>
+      <Name>YmatouMQ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YmatouMQ.Configuration\YmatouMQ.Configuration.csproj">
+      <Project>{7e1fd70e-5017-44a7-b260-a29e35ba4993}</Project>
+      <Name>YmatouMQ.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YmatouMQ.Log\YmatouMQ.Log.csproj">
+      <Project>{cfffaa58-248c-4719-bcd3-30dfd76664e2}</Project>
+      <Name>YmatouMQ.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

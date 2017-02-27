@@ -1,0 +1,49 @@
+﻿@model YmatouMQNet4.Configuration.AppdomainConfiguration
+
+@{
+    ViewBag.Title = "编辑 Domain";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+
+    <hr />
+    @using (Ajax.BeginForm("EditSaveDomainCfg", "AdminMQ", new AjaxOptions
+    {
+        OnFailure = "busalert",
+        OnBegin = "onBegin",
+        OnComplete = "",
+        OnSuccess = ""
+    }, new { @class = "form-horizontal" }))
+    {
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">队列状态（启动，停止），归属Host分组，管理</legend>
+            <div class="control-group">
+                <label for="DomainName" class="col-sm-2 control-label">AppID</label>
+                <div class="col-sm-10">
+                    <input type="text" id="DomainName" name="DomainName" class="form-control list-group-item disabled" readonly="readonly" value="@Model.DomainName" />
+                    <p></p>
+
+                </div>
+                <label for="ownerhost" class="col-sm-2 control-label">分组状态</label>
+                <div class="col-sm-10">
+                    @Html.DropDownListFor(m => m.Status, ViewBag.DomainActionItems as List<SelectListItem>, new { @class = "form-control" })
+                    <p class="text-left help-block  text-error"><small>选择Remove状态则停止该分组下的所有队列实例</small></p>
+                </div>
+                <label for="ownerhost" class="col-sm-2 control-label">归属Host</label>
+                <div class="col-sm-10">
+                    <input type="text" id="ownerhost" name="Host" class="form-control" value="@Model.Host" />
+                    <p class="text-left help-block  text-error"><small>填写IP后两段，多个host间英文逗号分割</small></p>
+                </div>
+            </div>
+
+            @if (Model.Items != null)
+            {
+                @Html.Partial("_domainItem", Model.Items)
+            }
+
+        </fieldset>
+        <div id="button">
+            <input type="submit" value="保存" class="btn btn-primary" /> @Html.ActionLink("返回到列表页面", "AppdomainList", null, new { @class = "btn btn-warning" })
+        </div>
+    }
+</div>

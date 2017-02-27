@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "修改配置信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="page-header">
+        <span>根据应用ID，业务场景修改配置信息</span>
+    </div>*@
+
+<div class="container">
+    @using (Html.BeginForm("EditApp", "AdminMQ", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">编辑具体配置</legend>
+            <div id="_form" class="form-group">
+                <label for="AppId">AppID</label>
+                <select id="AppId" name="AppId" class="selectpicker form-control" data-style="btn-primary">
+                    <option value="default">请选择应用ID</option>
+                    @foreach (var v in TempData["AppList"] as List<string>)
+                    {
+                        <option value="@v">@v</option>
+                    }
+                </select>
+                <div id="query" class="form-group" style="display:none">
+                    <label for="code">Code</label>
+                    <select id="code" name="code" class="selectpicker form-control" data-style="btn-info"></select>
+                    <div id="button">
+                        <input type="submit" value="编辑" id="query_btn" class="btn btn-primary" role="button" />
+                    </div>
+                </div>
+            </div>
+            <p></p>
+        </fieldset>
+    }
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#query_btn").click(function () {
+            if ($("#code").val() == null || $("#AppId").val() == "default") {
+                busalert('请选择AppId和Code');
+                return false;
+            }
+        });
+        $("#AppId").change(function () {
+            var _appId = $("#AppId").val();
+            $("#code").empty();
+            $.post("/AdminMQ/AppSearch?appId=" + _appId, function (data) {
+                if (data.success) {
+                    $.each(data.codeList, function (i, item) {
+                        $("<option></option>").val(item["Value"]).text(item["Text"]).appendTo($("#code"))
+                    })
+                    if (data.count == 0) {
+                        $("#CreateCodePanel").css('display', 'inline');
+                        $("#button").css('display', 'none');
+                    }
+                    else {
+                        $("#CreateCodePanel").css('display', 'none');
+                        $("#button").css('display', 'inline');
+                    }
+                    $("#query").css('display', 'inline');
+                }
+            })
+        })
+    })
+
+</script>
+

@@ -1,0 +1,9 @@
+﻿@model bool?
+@if (ViewData.ModelMetadata.IsNullableValueType && Model == null)
+{
+    <input type="checkbox" value="false" />
+}
+else
+{
+    <input type="checkbox" checked="@(Model.Value == true ? "checked" : "")" value="@(Model.Value == true ? "selected": "")" />
+}

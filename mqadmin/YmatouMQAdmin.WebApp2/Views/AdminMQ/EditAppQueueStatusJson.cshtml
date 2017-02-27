@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "EditAppQueueStatusJson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    @using (Html.BeginForm("SaveEditAppQueueStatusJson", "AdminMQ", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">编辑队列JSON</legend>
+
+            <div id="form" class="form-group">
+
+                <label for="domainId">AppID</label>
+                <select id="domainId" name="domainId" class="selectpicker form-control" data-style="btn-primary">
+                    <option value="default">请选择应用ID</option>
+                    @foreach (var v in TempData["QueueStatusJson"] as List<string>)
+                    {
+                        <option value="@v">@v</option>
+                    }
+                </select>
+
+                <input type="submit" value="编辑" class="btn btn-primary" />
+
+            </div>
+            <p></p>
+        </fieldset>
+    }
+ </div>

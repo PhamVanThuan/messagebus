@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72E5E5C7-68F1-4C61-BBB1-2F3D48C6618D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YmatouMQConsume</RootNamespace>
+    <AssemblyName>YmatouMQConsumeService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="Ymatou.MonitorClient, Version=1.0.6.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ymatou.MonitorClient.1.0.6.3\lib\net40\Ymatou.MonitorClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="YmatouMQConsumeService .cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="YmatouMQConsumeService .Designer.cs">
+      <DependentUpon>YmatouMQConsumeService .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Script\Install.bat" />
+    <None Include="Script\restart.bat" />
+    <None Include="Script\start.bat" />
+    <None Include="Script\stop.bat" />
+    <None Include="Script\UnInstall.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YmatouMQConsumeService .resx">
+      <DependentUpon>YmatouMQConsumeService .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\YmatouMQ.Common\YmatouMQ.Common.csproj">
+      <Project>{8040a5d8-1087-4dc1-a7d0-3ca3da79b762}</Project>
+      <Name>YmatouMQ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.ConfigurationSync\YmatouMQ.ConfigurationSync.csproj">
+      <Project>{6b47e320-e366-4992-9af8-2099be6366be}</Project>
+      <Name>YmatouMQ.ConfigurationSync</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.Configuration\YmatouMQ.Configuration.csproj">
+      <Project>{7e1fd70e-5017-44a7-b260-a29e35ba4993}</Project>
+      <Name>YmatouMQ.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.Connection\YmatouMQ.Connection.csproj">
+      <Project>{1f6d300e-c2e4-453c-af13-ed9df3317de3}</Project>
+      <Name>YmatouMQ.Connection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.Log\YmatouMQ.Log.csproj">
+      <Project>{cfffaa58-248c-4719-bcd3-30dfd76664e2}</Project>
+      <Name>YmatouMQ.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQ.SubscribeAppDomainSingle\YmatouMQ.SubscribeAppDomainSingle.csproj">
+      <Project>{5f234031-142e-424f-8af0-78ac1b0076d4}</Project>
+      <Name>YmatouMQ.SubscribeAppDomainSingle</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQMessageHandlerScheduler\YmatouMQ.MessageScheduler.csproj">
+      <Project>{3ccbe840-2b24-4cc1-9190-347189607030}</Project>
+      <Name>YmatouMQ.MessageScheduler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQMessageMongodb\YmatouMQ.MessageMongodb.csproj">
+      <Project>{3ac029b8-e25c-4adb-913b-895cac500bb4}</Project>
+      <Name>YmatouMQ.MessageMongodb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\YmatouMQSubscribe\YmatouMQ.Subscribe.csproj">
+      <Project>{3ee7972e-67c9-4459-8165-2efca8df5d52}</Project>
+      <Name>YmatouMQ.Subscribe</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nuget\NuGet.exe" />
+    <Content Include="nuget\NuGetPackageUploader.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

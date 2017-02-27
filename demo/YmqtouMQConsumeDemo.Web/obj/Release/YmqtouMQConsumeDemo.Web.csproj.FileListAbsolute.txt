@@ -1,0 +1,15 @@
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\YmqtouMQConsumeDemo.Web.dll.config
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\YmqtouMQConsumeDemo.Web.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\YmqtouMQConsumeDemo.Web.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\log4net.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\Newtonsoft.Json.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\ServiceStack.Text.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\Ymatou.Log.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\YmatouMQClientNet4.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\YmatouMQClientNet4.pdb
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\log4net.xml
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\Newtonsoft.Json.xml
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\bin\ServiceStack.Text.xml
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\obj\Release\YmqtouMQConsumeDemo.Web.csprojResolveAssemblyReference.cache
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\obj\Release\YmqtouMQConsumeDemo.Web.dll
+D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\demo\YmqtouMQConsumeDemo.Web\obj\Release\YmqtouMQConsumeDemo.Web.pdb

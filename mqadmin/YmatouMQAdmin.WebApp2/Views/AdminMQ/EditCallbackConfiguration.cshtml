@@ -1,0 +1,31 @@
+﻿@model List<YmatouMQNet4.Configuration.CallbackConfiguration>
+@{
+    ViewBag.Title = "编辑回调业务配置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    @using (Ajax.BeginForm("SaveCallbackConfiguration", "AdminMQ"
+         , new AjaxOptions
+    {
+        OnFailure = "busalert",
+        OnBegin = "onBegin",
+        OnComplete = "",
+        OnSuccess = ""
+    }
+        , new { @class = "form-horizontal" }))
+    {
+        <input type="hidden" id="appId" name="appId" value="@ViewBag.appId" />
+
+        <input type="hidden" id="code" name="code" value="@ViewBag.code" />
+
+        @Html.Partial("_CallBackList", Model)
+
+        <div id="button">
+            <input id="save" type="submit" class="btn btn-primary" value="保存" />
+        </div>
+    }
+</div>
+
+

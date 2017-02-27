@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "新增Domain";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <hr />
+    @using (Html.BeginForm("SaveNewDomainAppCfg", "AdminMQ", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">队列分组关联</legend>
+            <div id="form" class="control-group">
+                <label for="appId" class="col-sm-2 control-label">AppID</label>
+                <div class="col-sm-10">
+                    <select id="appId" name="appId" class="selectpicker form-control" data-style="btn-primary">
+                        <option value="default">请选择应用ID</option>
+                        @foreach (var v in TempData["AppList"] as List<string>)
+                        {
+                            <option value="@v">@v</option>
+                        }
+                    </select>
+                    <p></p>
+                </div>
+                <label for="owerHost" class="col-sm-2 control-label">关联HOST</label>
+                <div id="owerHostdiv" class="col-sm-10">
+                    <input type="text" name="owerHost" id="owerHost" class="form-control" />
+                    <p class="text-left help-block  text-error"><small>可选,填写IP后2段位，多个ip间英文逗号分割</small></p>
+                </div>
+                <table width="100%">
+                    <tr>
+                        <td class="col-sm-2 control-label" valign="top"><label for="codelist" id="code_lable">选择Code</label></td>
+                        <td align="left">
+                            <div style="float: left; text-indent:0.7em" id="codelist" class="form-inline">
+                                <p></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p id="msg"></p>
+        </fieldset>
+        <div id="addbtndiv" style="display: none">
+            <input id="savequeue" class="btn btn-primary" type="submit" value="关联并启动队列" />
+        </div>
+        <p></p>
+    }
+</div>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#appId").change(function () {
+                $("#codelist").empty();
+                $("#msg").empty();
+                $.post("/AdminMQ/AppDomainSearch?appId=" + $("#appId").val(), function (data) {
+                    if (data.success) {
+                        $.each(data.codeList, function (i, item) {
+                            $("<label id='code' class='checkbox-inline' for='" + item["Value"] + " '><input type='checkbox' id=" + item["Value"] + " name='checkboxList' value=" + item["Value"] + ">" + item["Text"] + "</input>  </label>").appendTo("#codelist");
+                        });
+                        if (data.count == 0) {
+                            $("#addbtndiv").css('display', 'none');
+                            $("#codelist").html("<p classs='text-left text-error'><small style='color:red'>" + $("#appId").val() + "没有可关联的队列</small></p>");
+                        }
+                        else {
+                            $("#addbtndiv").css('display', 'inline');
+                        }
+                    }
+                })
+            })
+
+            $("#savequeue").click(function () {
+                $("input:checkbox").each(function () {
+                    if ($(this).is(":checked")) {
+                        var _v = $(this).val();
+                        _v += ":true"
+                        $(this).val(_v);
+                    }
+                })
+            })
+        })
+
+    </script>

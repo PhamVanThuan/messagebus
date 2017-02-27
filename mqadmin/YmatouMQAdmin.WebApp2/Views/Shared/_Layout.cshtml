@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/css/bootstrap-dialog")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/js/bootstrap-dialog")
+    <script src="~/Scripts/DatePicker/WdatePicker.js"></script>
+    <style type="text/css">
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+        legend.scheduler-border {
+            background: #FF9;
+            font-size: 1.2em !important;
+            font-weight: bold !important;
+            text-align: left !important;
+            width: inherit; /* Or auto */
+            padding: 0 10px; /* To give a bit of padding on the left and right */
+            border-bottom: none;
+            border-radius:15px;
+        }
+        /*table 宽度*/
+        .table-nonfluid {
+            width: auto !important;
+        }
+        /*.the-table {
+            table-layout: fixed;
+        }*/
+        .tableth {
+            /*white-space: nowrap;
+            overflow: hidden;*/
+            /*text-overflow:ellipsis;
+            overflow-x: hidden;*/
+        }
+    </style>
+    <script type="text/javascript">
+        function busalert(msg) {
+            BootstrapDialog.show({
+                title: '消息总线管理后台',
+                message: msg
+            });
+        }
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+
+    </script>
+    @RenderSection("Scripts", required: false)
+    @RenderSection("Head", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @*<img src="~/Images/ymt.gif" style="height:60px;width:500px" />*@
+                    <a class="navbar-brand" href="#" style="color: #F9F7FA"><b>洋码头消息总线管理后台</b></a>
+                </div>
+
+                <div class="navbar-collapse collapse">
+                    @{Html.RenderAction("LeftMenu", "LogOn");}
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--body-->
+    <!--<div class="container" >-->
+    @RenderBody()
+    <!--</div>-->
+    <!--footer-->
+    <div class="panel-footer" style="width:100%">
+        @DateTime.Now.Year - 洋码头消息总线管理后台
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $(".nav a").on("click", function () {
+                $(".nav").find(".active").removeClass("active");
+                $(this).parent().addClass("active");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+﻿body 
+{
+    /*font:12px Tahoma;*/
+    font-family:Microsoft YaHei;
+    margin:0px;
+    text-align:center;
+     /*background:#FFF;*/
+
+}
+
+#Container
+{
+    width:100%;
+}
+
+#Header {
+    width: 100%;
+    margin: 0px auto;
+    height: 60px;
+    line-height: 60px;
+    background-color: #efeeef;
+    font-size: 32px;
+    text-align: center;
+    border: 1px solid #808080;
+}
+#PageBody
+{
+    width:100%;
+    margin:5px auto;
+    background-color:red;
+}
+
+#leftMenu
+{
+     width:10%;
+     height:800px;
+     float:left;
+     clear:left;
+     overflow:hidden;
+     
+     border:1px solid #808080;
+}
+
+#leftMenu ul
+{
+    list-style:none;
+    margin:0px;
+}
+
+#leftMenu ul li
+{
+    float:left;
+    margin:5px;
+}
+
+#mainBody {
+    width: 88%;
+    float: right;
+    /*overflow:hidden;*/
+    text-align: left;
+    border: 1px solid #808080;
+    height: auto;
+}
+
+
+#table-deafult {
+    border: 1px solid #ccc;
+    padding: 10px;
+    /*width: 1200px;*/
+    border-collapse: collapse;
+    margin: 10px 0 10px 30px;
+    
+}
+#table-deafult tr td
+{
+     /*border:1px solid #ccc;*/
+}
+
+#testTable {
+    border: 1px solid #e2e2e2;
+    padding: 10px;
+    border-collapse: collapse;
+    margin: 10px 0 0 30px;
+}
+
+.logonTable
+{
+        border: 1px solid #e2e2e2;
+    border-collapse: collapse;
+    width:350px;
+}
+.logonTable tr td
+{
+         border:1px solid #808080;
+}
+
+.tdLeft
+{
+    width:200px;
+    text-align:right;
+}
+
+.tdRight
+{
+    width:1080px;
+    text-align:left;
+}
+
+.textArea-default
+{
+    width:900px;
+    height:150px;
+}
+
+#tableList{
+    margin:10px 10px 10px 30px;
+    width:500px;
+     border:1px solid #808080;
+     border-collapse: collapse;
+     font-size:14px;
+}
+
+#tableList tr td{
+     border:1px solid #808080;
+}
+
+#tableList tr th{
+     border:1px solid #808080;
+}
+#EditPanel tr td
+{
+     border:1px solid #808080;
+}
+#EditPanel
+{
+    width:500px;
+    border:1px solid #808080;
+       border-collapse: collapse;
+     font-size:14px;
+}
+#button
+{
+    margin:20px 0 20px 20px;
+}
+
+footer {
+    clear: both;
+    background-color: #e2e2e2;
+    font-size: .8em;
+    height: 100px;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    color: #000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin:20px auto;
+}
+
+h2 {
+    font-size: 1.75em;
+    margin:20px auto;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+
+.tableIndexList
+{
+    border: solid 1px #e2e3e5;
+    margin:30px 10px 20px 30px;
+    width: 150px;
+    float:left;
+}
+.tableIndexList tr th
+{
+            height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-right: solid 1px #e2e3e5;
+        font-weight: normal;
+        border-bottom: solid 1px #e2e3e5;
+        color:#6cbded;
+}
+    .tableIndexList tr td
+    {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-right: solid 1px #e2e3e5;
+        font-weight: normal;
+        border-bottom: solid 1px #e2e3e5;
+    }
+
+.searchpanel
+{
+     border: solid 1px #e2e3e5;
+    margin:30px 10px 20px 30px;
+    width:1300px;
+}
+.searchpanel td
+{
+    padding:10px;
+}
+
+.searchpanelSmall
+{
+       border: solid 1px #e2e3e5;
+    margin:30px 10px 20px 20px;
+    width:600px;
+}
+
+.searchpanelSmall td
+{
+         padding:10px;
+}
+
+
+/*列表工具栏*/
+.list-tools {
+    float:right;
+  height: 60px;
+  line-height: 60px;
+  overflow: hidden; }
+
+.list-tools > span {
+  margin-left: 0; }
+
+
+.list-tools .c-pagination {
+  line-height: normal;
+  margin-top: 20px; }
+
+.c-pagination {
+  color: #999;
+  white-space: nowrap;
+  _text-align: right; }
+
+.c-pagination .pagination-page {
+  display: inline; }
+
+
+.c-pagination .pagination-form {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  _vertical-align: middle; }
+
+.c-pagination .pagination-form label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -5px; }
+
+.c-pagination .pagination-page li {
+  float: left; }
+
+.c-pagination li a {
+  display: block;
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  margin-right: 5px;
+  color: #999; }
+
+.c-pagination .pageNo {
+  width: 20px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 5px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 4px #f0f0f0 inset;
+  margin: 0 4px;
+  vertical-align: baseline; }
+
+.c-pagination .forward {
+  height: 28px;
+  line-height: 28px;
+  padding: 0 15px;
+  border: 1px solid #ddd;
+  background: linear-gradient(to bottom, #fff, #eee);
+  margin: 0 4px;
+  color: #999;
+  margin-top: -3px; }
+
+.c-pagination li a:hover {
+  border: 2px solid #f04e00;
+  color: #f04e00;
+  background-color: #fff;
+  padding: 5px 11px; }
+
+/* 分页项选中 */
+.c-pagination li .active {
+  border: 2px solid #f04e00;
+  color: #f04e00;
+  background-color: #fff;
+  padding: 5px 11px; }
+
+/* 分页项失效 */
+.c-pagination .disabled {
+  color: #ccc;
+  border: 1px solid #ddd;
+  cursor: auto;
+  background-color: #eee;
+  padding: 6px 11px; }
+
+.c-pagination li .disabled:hover,
+.c-pagination li .active:hover {
+  border: 1px solid;
+  cursor: auto; }
+
+.c-pagination li .active:hover {
+  border: 2px solid; }
+
+.c-pagination li .disabled:hover {
+  color: #eee;
+  padding: 6px 11px; }
+

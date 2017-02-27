@@ -1,0 +1,52 @@
+﻿@model List<YmatouMQNet4.Configuration.DomainItem>
+
+@{
+    var count = 0;
+}
+
+@for (var i = 0; i < Model.Count(); i++)
+{
+    count++;
+    <div class="control-group">
+        <label for="_appid" class="col-sm-2 control-label">AppId</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m[i].AppId, new { @readonly = "readonly", @class = "form-control", id = "_appid" })
+            <p></p>
+        </div>
+        <label for="_code" class="col-sm-2 control-label">队列名称</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m[i].Code, new { @readonly = "readonly", @class = "form-control", id = "_code" })
+            <p></p>
+        </div>
+        <label for="_queueStatus" class="col-sm-2 control-label">状态</label>
+        <div class="col-sm-10">
+            @Html.DropDownListFor(m => m[i]._Status, ((List<SelectListItem>)ViewBag.DomainActionItems).Select(s =>
+           {
+               string str = s.Value;
+               return new SelectListItem()
+               {
+                   Selected = ((int)Model[i]._Status).ToString() == str ? true : false,
+                   Text = s.Text,
+                   Value = s.Value
+               };
+           }), new { id = "_queueStatus", @class = "form-control" })
+            <p></p>
+        </div>
+        <label for="_poolSize" class="col-sm-2 control-label">线程池大小</label>
+        <div class="col-sm-10">
+            @Html.DropDownListFor(m => m[i].ConnectionPoolSize, ((List<int>)ViewBag.DomainConnectionPool).Select(s =>
+           {
+               int pool = s;
+               return new SelectListItem()
+               {
+                   Selected = Model[i].ConnectionPoolSize == pool ? true : false,
+                   Text = pool.ToString(),
+                   Value = pool.ToString(),
+
+               };
+           }), new { id = "_poolSize", @class = "form-control" })
+            <p></p>
+        </div>
+    </div>    
+}
+

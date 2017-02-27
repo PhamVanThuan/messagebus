@@ -1,0 +1,13 @@
+﻿@ViewBag.Menu
+@if (TempData["username"] != null)
+{
+    <ul class="nav navbar-nav navbar-right" style="margin-right:-60px;">
+        <li>@Html.ActionLink(string.Concat(TempData["username"].ToString(), "退出"), "logOut", "LogOn")</li>
+    </ul>
+}
+
+
+
+
+
+

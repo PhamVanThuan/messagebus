@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "EditCurrentApp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    string app = (string)ViewBag.GlobalApp;
+}
+<div class="container">
+    <input type="hidden" id="appHidden" value="@app" />
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">编辑消息配置JSON</legend>
+        <div class="col-sm-10 control-group" style="width:100%">
+            <textarea id="appString" class="form-control" name="appString" style="width:100%;height:600px;"></textarea>
+            <p></p>
+        </div>
+    </fieldset>
+    <div id="button">
+        <input id="submit" type="submit" class="btn btn-primary" value="保存" role="button" />
+        <a href="javascript:history.back()" class="btn btn-warning">返回</a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var h = $("#appHidden").val();
+        $("#appString").html(h);
+        $("#submit").click(function () {
+            var appString = $("#appString").val();
+            if (appString == "null") {
+                busalert("请填写消息JSON");
+                return false;
+            }
+            try {
+                JSON.parse(appString);
+            }
+            catch (e) {
+                busalert("字符串格式不符合JSON格式，请检查");
+                return false;
+            }
+            var formatdata = { appContent: appString };
+            $.ajax({
+                url: "/AdminMQ/EditGlobalApp",
+                type: "POST",
+                dataType: "json",
+                data: formatdata,
+                // data: JSON.stringify(formatData),
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                success: function (data) {
+                    if (data.success) {
+                        busalert("保存成功");
+                    }
+                    else {
+                        busalert(data.msg);
+                    }
+                }
+
+            });
+            //$.post("/AdminMQ/EditGlobalApp?appString=" + appString, function (data)
+            //{
+            //    if(data.success)
+            //    {
+            //        alert("保存成功");
+            //    }
+            //    else
+            //    {
+            //        alert("保存失败");
+            //    }
+            //})
+        })
+    })
+</script>

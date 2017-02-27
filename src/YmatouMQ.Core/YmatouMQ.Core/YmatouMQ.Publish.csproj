@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDDBE334-D0DE-4E07-A772-6261CC47AF01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YmatouMQNet4</RootNamespace>
+    <AssemblyName>YmatouMQNet4</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET4</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.0.2.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\RabbitMQ.Client.3.5.3\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\packages\ServiceStack.Text.4.0.34\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Ymatou.Log, Version=1.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Ymatou.Log.1.1.0.2\lib\net40\Ymatou.Log.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ymatou.MonitorClient">
+      <HintPath>..\..\packages\Ymatou.MonitorClient.1.0.4.20222\lib\net40\Ymatou.MonitorClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\AppdomainConfiguration.cs" />
+    <Compile Include="Configuration\Manager\AppdomainConfigurationManager.cs" />
+    <Compile Include="Configuration\CfgTypeEnum.cs" />
+    <Compile Include="Configuration\ConfigurationEnum.cs" />
+    <Compile Include="Configuration\ConfigurationUri.cs" />
+    <Compile Include="Configuration\ConnectionConfigureation.cs" />
+    <Compile Include="Configuration\ConsumeConfiguration.cs" />
+    <Compile Include="Configuration\ExchangeConfiguration.cs" />
+    <Compile Include="Configuration\MessageConfiguration.cs" />
+    <Compile Include="Configuration\MessagePropertiesConfiguration.cs" />
+    <Compile Include="Configuration\MQMainConfiguration.cs" />
+    <Compile Include="Configuration\Manager\MQMainConfigurationManager.cs" />
+    <Compile Include="Configuration\PublishConfiguration.cs" />
+    <Compile Include="Configuration\QueueConfiguration.cs" />
+    <Compile Include="Configuration\MQSystemConfiguration.cs" />
+    <Compile Include="Configuration\Manager\_UpdateConnectionInfo.cs" />
+    <Compile Include="Connection\ConnectionInfo.cs" />
+    <Compile Include="Connection\MQServerEventListener.cs" />
+    <Compile Include="Connection\IConnRecoveryNotify.cs" />
+    <Compile Include="Connection\MQConnectionPoolManager.cs" />
+    <Compile Include="Core\Context\ExceptionMessageContext.cs" />
+    <Compile Include="Core\ExceptionMessageQueue.cs" />
+    <Compile Include="Core\Context\MessageContextAsync.cs" />
+    <Compile Include="Core\BusApplicationStatus.cs" />
+    <Compile Include="Core\Exchange.cs" />
+    <Compile Include="Core\IBus.cs" />
+    <Compile Include="Core\MessageBusSetup.cs" />
+    <Compile Include="Core\MessageStatus.cs" />
+    <Compile Include="Core\MessageStruct.cs" />
+    <Compile Include="Core\PublishAsync.cs" />
+    <Compile Include="Core\PublishBufferActionAsync.cs" />
+    <Compile Include="Core\PublishMessageBase.cs" />
+    <Compile Include="Core\PublishMessageFactory.cs" />
+    <Compile Include="Extensions\RabbitmqExtensions.cs" />
+    <Compile Include="Logs\LogLevel.cs" />
+    <Compile Include="Utils\BufferActionBlockWrapper.cs" />
+    <Compile Include="Utils\ReturnNull.cs" />
+    <Compile Include="Dto\MessagePersistentDto.cs" />
+    <Compile Include="Dto\MQMessageStatusDto.cs" />
+    <Compile Include="Extensions\ProtoBufFormat.cs" />
+    <Compile Include="Utils\TimerBatchBlockWrapper.cs" />
+    <Compile Include="Utils\_Utils.cs" />
+    <Compile Include="_Persistent\_PersistentMessage.cs" />
+    <Compile Include="Dto\MessageDto.cs" />
+    <Compile Include="Dto\ResponseCode.cs" />
+    <Compile Include="Dto\ResponseData.cs" />
+    <Compile Include="Extensions\_Task\ThreadPerTaskScheduler.cs" />
+    <Compile Include="Logs\NullLog.cs" />
+    <Compile Include="Logs\ConsoleLog.cs" />
+    <Compile Include="Core\Bus.cs" />
+    <Compile Include="Core\IMessageHandler.cs" />
+    <Compile Include="Core\Context\MessageHandleContext.cs" />
+    <Compile Include="Core\MessageBus.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\MessageSerialization.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Logs\GeneralFileLog.cs" />
+    <Compile Include="Logs\ILog.cs" />
+    <Compile Include="IMessageSerialization.cs" />
+    <Compile Include="Logs\LogFactory.cs" />
+    <Compile Include="MQException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\_Task\APM\FileAsync.cs" />
+    <Compile Include="Extensions\_Task\APM\StreamExtensions.cs" />
+    <Compile Include="Extensions\_Task\APM\WebRequestExtensions.cs" />
+    <Compile Include="Extensions\_Task\TaskExtensions.cs" />
+    <Compile Include="Core\PublishSync.cs" />
+    <Compile Include="Utils\ActionRetryHelp.cs" />
+    <Compile Include="Utils\AssertionConcern.cs" />
+    <Compile Include="Utils\DisposableObject.cs" />
+    <Compile Include="Utils\ExceptionArgs.cs" />
+    <Compile Include="Utils\LocalLogHelp.cs" />
+    <Compile Include="Utils\MessageHandleResponse.cs" />
+    <Compile Include="Extensions\_Task\TaskHelpers.cs" />
+    <Compile Include="Utils\MethodMonitor.cs" />
+    <Compile Include="Utils\TaskQueue.cs" />
+    <Compile Include="_Persistent\_PersistentMessageToMongodb.cs" />
+    <Compile Include="_Persistent\_PMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HttpListener\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YmatouMQMessageMongodb\YmatouMQ.MessageMongodb.csproj">
+      <Project>{3ac029b8-e25c-4adb-913b-895cac500bb4}</Project>
+      <Name>YmatouMQ.MessageMongodb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
