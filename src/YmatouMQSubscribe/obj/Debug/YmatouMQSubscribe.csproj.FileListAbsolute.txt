@@ -1,5 +1,0 @@
-D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQSubscribe\bin\Debug\YmatouMQSubscribe.dll
-D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQSubscribe\bin\Debug\YmatouMQSubscribe.pdb
-D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQSubscribe\obj\Debug\YmatouMQSubscribe.csprojResolveAssemblyReference.cache
-D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQSubscribe\obj\Debug\YmatouMQSubscribe.dll
-D:\work\洋码头基础设施项目群\YmatouMQ2.0\Main\src\YmatouMQSubscribe\obj\Debug\YmatouMQSubscribe.pdb
